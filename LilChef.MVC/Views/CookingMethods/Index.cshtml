@@ -1,0 +1,99 @@
+﻿@model IEnumerable<LilChef.Data.CookingMethod>
+
+@{
+    ViewBag.Title = "Index";
+}
+
+<h2>Cooking Methods and Techniques!</h2>
+<div class="options">
+    <p>
+        @Html.ActionLink("Create New", "Create")
+    </p>
+    <div class="dropdown">
+        <button type="button" class="btn btn-primary dropdown-toggle" data-toggle="dropdown">
+            Sort By:
+        </button>
+        <div class="dropdown-menu">
+            <a class="dropdown-item">@Html.ActionLink("Name", "Index", new { sortOrder = ViewBag.NameSortParm })</a>
+            <a class="dropdown-item">@Html.ActionLink("Difficulty", "Index", new { sortOrder = ViewBag.DifficultySortParm })</a>
+        </div>
+    </div>
+</div>
+<div class="cookingMethods">
+    <div class="methods">
+        @foreach (var item in Model)
+        {
+            <div id="accordion">
+                <div class="card">
+                    <div class="card-header">
+                        <a class="card-link" data-toggle="collapse" href="#collapseOne">
+                            @Html.DisplayFor(modelItem => item.CookingMethodName)
+                        </a>
+                        <div class="difficulty">
+                            @Html.DisplayFor(modelItem => item.Difficulty)
+                        </div>
+                    </div>
+                    <div id="collapseOne" class="collapse collapsing" data-parent="#accordion">
+                        <div class="card-body">
+                            @Html.DisplayFor(modelItem => item.Description)
+                        </div>
+                        <div class="links">
+                            @Html.ActionLink("Edit", "Edit", new { id = item.CookingMethodId }) |
+                            @Html.ActionLink("Details", "Details", new { id = item.CookingMethodId }) |
+                            @Html.ActionLink("Delete", "Delete", new { id = item.CookingMethodId })
+                        </div>
+                    </div>
+                </div>
+            </div>
+        }
+    </div>
+</div>
+<style>
+    .links {
+        float: right;
+    }
+
+    .difficulty {
+        float: right;
+    }
+
+    .cookingMethods {
+        border: 20px solid transparent;
+        border-image: url(/Assets/bell-peppers.jpg) 30 round;
+    }
+
+</style>
+@*<table class="table">
+        <tr>
+            <th>
+                @Html.DisplayNameFor(model => model.CookingMethodName)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Description)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Difficulty)
+            </th>
+            <th></th>
+        </tr>
+
+    @foreach (var item in Model) {
+        <tr>
+            <td>
+                @Html.DisplayFor(modelItem => item.CookingMethodName)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Description)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Difficulty)
+            </td>
+            <td>
+                @Html.ActionLink("Edit", "Edit", new { id=item.CookingMethodId }) |
+                @Html.ActionLink("Details", "Details", new { id=item.CookingMethodId }) |
+                @Html.ActionLink("Delete", "Delete", new { id=item.CookingMethodId })
+            </td>
+        </tr>
+    }
+
+    </table>*@

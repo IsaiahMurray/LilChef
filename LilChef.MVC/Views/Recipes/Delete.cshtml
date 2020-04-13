@@ -1,0 +1,136 @@
+﻿@model LilChef.Models.RecipeModels.RecipeDelete
+
+@{
+    ViewBag.Title = "Delete";
+}
+
+<h2>Delete</h2>
+
+<h3>Are you sure you want to delete this?</h3>
+<div>
+    <h4>RecipeDelete</h4>
+    <hr />
+    <dl class="dl-horizontal">
+        <dt>
+            @Html.DisplayNameFor(model => model.RecipeName)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.RecipeName)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Description)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Description)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.IngredientItems)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.IngredientItems)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Procedure)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Procedure)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.HasGluten)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.HasGluten)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.HasNuts)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.HasNuts)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.HasEggs)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.HasEggs)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.HasSoy)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.HasSoy)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.HasDairy)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.HasDairy)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.IsVegan)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.IsVegan)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.IsVegetarian)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.IsVegetarian)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.IsPescatarian)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.IsPescatarian)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.IsKetoFriendly)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.IsKetoFriendly)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Difficulty)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Difficulty)
+        </dd>
+
+    </dl>
+
+    @using (Html.BeginForm()) {
+        @Html.AntiForgeryToken()
+
+        <div class="form-actions no-color">
+            <input type="submit" value="Delete" class="btn btn-default" /> |
+            @Html.ActionLink("Back to List", "Index")
+        </div>
+    }
+</div>

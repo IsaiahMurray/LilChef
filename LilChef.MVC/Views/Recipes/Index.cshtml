@@ -1,0 +1,95 @@
+﻿@model IEnumerable<LilChef.Data.Recipe>
+
+@{
+    ViewBag.Title = "Index";
+}
+
+<h2>Index</h2>
+
+<p>
+    @Html.ActionLink("Create New", "Create")
+</p>
+<table class="table">
+    <tr>
+        <th>
+            @Html.DisplayNameFor(model => model.RecipeName)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.HasGluten)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.HasNuts)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.HasEggs)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.HasSoy)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.HasDairy)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.IsVegan)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.IsVegetarian)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.IsPescatarian)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.IsKetoFriendly)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Difficulty)
+        </th>
+    </tr>
+
+    @foreach (var item in Model)
+    {
+        <tr>
+            <td>
+                @Html.DisplayFor(modelItem => item.RecipeName)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.HasGluten)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.HasNuts)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.HasEggs)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.HasSoy)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.HasDairy)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.IsVegan)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.IsVegetarian)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.IsPescatarian)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.IsKetoFriendly)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Difficulty)
+            </td>
+
+            <td>
+                @Html.ActionLink("Edit", "Edit", new { id = item.RecipeId })
+                @Html.ActionLink("Details", "Details", new { id = item.RecipeId })
+                @Html.ActionLink("Delete", "Delete", new { id = item.RecipeId })
+            </td>
+        </tr>
+    }
+
+</table>
+
