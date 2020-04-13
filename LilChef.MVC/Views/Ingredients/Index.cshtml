@@ -4,96 +4,658 @@
     ViewBag.Title = "Index";
 }
 
-<h2>Index</h2>
-
+<h2>Ingredients</h2>
+Alternatives = 0, Meats = 1, Seafood = 2, Vegetables = 3, Fruit = 4, Dairy = 5, Pasta = 6, Legumes = 7, Eggs = 8, Nuts = 9, Grains = 10, Condiments = 11, Chips_and_Snacks = 12, Baking_Goods = 13, Breads = 14, Sweets = 15
 <p>
     @Html.ActionLink("Create New", "Create")
 </p>
-<table class="table">
-    <tr>
-        <th>
-            @Html.DisplayNameFor(model => model.IngredientName)
-        </th>
-        <th>
-            @Html.DisplayNameFor(model => model.Description)
-        </th>
-        <th>
-            @Html.DisplayNameFor(model => model.Category)
-        </th>
-        @*<th>
-            @Html.DisplayNameFor(model => model.HasGluten)
-        </th>
-        <th>
-            @Html.DisplayNameFor(model => model.HasNuts)
-        </th>
-        <th>
-            @Html.DisplayNameFor(model => model.HasEggs)
-        </th>
-        <th>
-            @Html.DisplayNameFor(model => model.HasSoy)
-        </th>
-        <th>
-            @Html.DisplayNameFor(model => model.HasDairy)
-        </th>
-        <th>
-            @Html.DisplayNameFor(model => model.IsVegan)
-        </th>
-        <th>
-            @Html.DisplayNameFor(model => model.IsVegetarian)
-        </th>
-        <th>
-            @Html.DisplayNameFor(model => model.IsPescatarian)
-        </th>
-        <th>
-            @Html.DisplayNameFor(model => model.IsKetoFriendly)
-        </th>*@
-        <th></th>
-    </tr>
 
-@foreach (var item in Model) {
-    <tr>
-        <td>
-            @Html.DisplayFor(modelItem => item.IngredientName)
-        </td>
-        <td>
-            @Html.DisplayFor(modelItem => item.Description)
-        </td>
-        <td>
-            @Html.DisplayFor(modelItem => item.Category)
-        </td>
-        @*<td>
-            @Html.DisplayFor(modelItem => item.HasGluten)
-        </td>
-        <td>
-            @Html.DisplayFor(modelItem => item.HasNuts)
-        </td>
-        <td>
-            @Html.DisplayFor(modelItem => item.HasEggs)
-        </td>
-        <td>
-            @Html.DisplayFor(modelItem => item.HasSoy)
-        </td>
-        <td>
-            @Html.DisplayFor(modelItem => item.HasDairy)
-        </td>
-        <td>
-            @Html.DisplayFor(modelItem => item.IsVegan)
-        </td>
-        <td>
-            @Html.DisplayFor(modelItem => item.IsVegetarian)
-        </td>
-        <td>
-            @Html.DisplayFor(modelItem => item.IsPescatarian)
-        </td>
-        <td>
-            @Html.DisplayFor(modelItem => item.IsKetoFriendly)
-        </td>*@
-        <td>
-            @Html.ActionLink("Edit", "Edit", new { id=item.IngredientId }) |
-            @Html.ActionLink("Details", "Details", new { id=item.IngredientId }) |
-            @Html.ActionLink("Delete", "Delete", new { id=item.IngredientId })
-        </td>
-    </tr>
-}
+<div id="accordion">
+    @*Alternatives*@
+    <div class="card">
+        <div class="card-header">
+            <a class="card-link" data-toggle="collapse" href="#Alternatives-Category">
+                Alternatives
+            </a>
+        </div>
+        <div id="Alternatives-Category" class="collapse collapsing" data-parent="#accordion">
+            @foreach (var item in Model)
+            {
+                if (item.Category == LilChef.Data.IngredientCategories.CategoryType.Alternatives)
+                {
+                    <div id="accordion">
+                        <div class="card">
+                            <div class="card-header">
+                                <a class="card-link" data-toggle="collapse" href="#Alternatives">
+                                    @Html.DisplayFor(modelItem => item.IngredientName)
+                                </a>
+                            </div>
+                            <div id="Alternatives" class="collapse collapsing" data-parent="#accordion">
+                                <div class="card-body">
+                                    @Html.DisplayFor(modelItem => item.Description)
+                                </div>
+                                <div class="links">
+                                    @Html.ActionLink("Edit", "Edit", new { id = item.IngredientName }) |
+                                    @Html.ActionLink("Details", "Details", new { id = item.IngredientName }) |
+                                    @Html.ActionLink("Delete", "Delete", new { id = item.IngredientName })
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                }
+            }
+        </div>
+    </div>
+</div>
 
-</table>
+<div id="accordion">
+    @*Baking*@
+    <div class="card">
+        <div class="card-header">
+            <a class="card-link" data-toggle="collapse" href="#Baking-Category">
+                Baking Goods
+            </a>
+        </div>
+        <div id="Baking-Category" class="collapse collapsing" data-parent="#accordion">
+            @foreach (var item in Model)
+            {
+                if (item.Category == LilChef.Data.IngredientCategories.CategoryType.Baking_Goods)
+                {
+                    <div id="accordion">
+                        <div class="card">
+                            <div class="card-header">
+                                <a class="card-link" data-toggle="collapse" href="#Baking">
+                                    @Html.DisplayFor(modelItem => item.IngredientName)
+                                </a>
+                            </div>
+                            <div id="Baking" class="collapse collapsing" data-parent="#accordion">
+                                <div class="card-body">
+                                    @Html.DisplayFor(modelItem => item.Description)
+                                </div>
+                                <div class="links">
+                                    @Html.ActionLink("Edit", "Edit", new { id = item.IngredientName }) |
+                                    @Html.ActionLink("Details", "Details", new { id = item.IngredientName }) |
+                                    @Html.ActionLink("Delete", "Delete", new { id = item.IngredientName })
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                }
+            }
+        </div>
+    </div>
+</div>
+
+<div id="accordion">
+    @*Breads*@
+    <div class="card">
+        <div class="card-header">
+            <a class="card-link" data-toggle="collapse" href="#Breads-Category">
+                Breads
+            </a>
+        </div>
+        <div id="Breads-Category" class="collapse collapsing" data-parent="#accordion">
+            @foreach (var item in Model)
+            {
+                if (item.Category == LilChef.Data.IngredientCategories.CategoryType.Breads)
+                {
+                    <div id="accordion">
+                        <div class="card">
+                            <div class="card-header">
+                                <a class="card-link" data-toggle="collapse" href="#Breads">
+                                    @Html.DisplayFor(modelItem => item.IngredientName)
+                                </a>
+                            </div>
+                            <div id="Breads" class="collapse collapsing" data-parent="#accordion">
+                                <div class="card-body">
+                                    @Html.DisplayFor(modelItem => item.Description)
+                                </div>
+                                <div class="links">
+                                    @Html.ActionLink("Edit", "Edit", new { id = item.IngredientName }) |
+                                    @Html.ActionLink("Details", "Details", new { id = item.IngredientName }) |
+                                    @Html.ActionLink("Delete", "Delete", new { id = item.IngredientName })
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                }
+            }
+        </div>
+    </div>
+</div>
+
+<div id="accordion">
+    @*Chips and Snacks*@
+    <div class="card">
+        <div class="card-header">
+            <a class="card-link" data-toggle="collapse" href="#Chips-Category">
+                Chips and Snacks
+            </a>
+        </div>
+        <div id="Chips-Category" class="collapse collapsing" data-parent="#accordion">
+            @foreach (var item in Model)
+            {
+                if (item.Category == LilChef.Data.IngredientCategories.CategoryType.Chips_and_Snacks)
+                {
+                    <div id="accordion">
+                        <div class="card">
+                            <div class="card-header">
+                                <a class="card-link" data-toggle="collapse" href="#Chips">
+                                    @Html.DisplayFor(modelItem => item.IngredientName)
+                                </a>
+                            </div>
+                            <div id="Chips" class="collapse collapsing" data-parent="#accordion">
+                                <div class="card-body">
+                                    @Html.DisplayFor(modelItem => item.Description)
+                                </div>
+                                <div class="links">
+                                    @Html.ActionLink("Edit", "Edit", new { id = item.IngredientName }) |
+                                    @Html.ActionLink("Details", "Details", new { id = item.IngredientName }) |
+                                    @Html.ActionLink("Delete", "Delete", new { id = item.IngredientName })
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                }
+            }
+        </div>
+    </div>
+</div>
+
+<div id="accordion">
+    @*Condiments*@
+    <div class="card">
+        <div class="card-header">
+            <a class="card-link" data-toggle="collapse" href="#Condiments-Category">
+                Condiments
+            </a>
+        </div>
+        <div id="Condiments-Category" class="collapse collapsing" data-parent="#accordion">
+            @foreach (var item in Model)
+            {
+                if (item.Category == LilChef.Data.IngredientCategories.CategoryType.Condiments)
+                {
+                    <div id="accordion">
+                        <div class="card">
+                            <div class="card-header">
+                                <a class="card-link" data-toggle="collapse" href="#Condiments">
+                                    @Html.DisplayFor(modelItem => item.IngredientName)
+                                </a>
+                            </div>
+                            <div id="Condiments" class="collapse collapsing" data-parent="#accordion">
+                                <div class="card-body">
+                                    @Html.DisplayFor(modelItem => item.Description)
+                                </div>
+                                <div class="links">
+                                    @Html.ActionLink("Edit", "Edit", new { id = item.IngredientName }) |
+                                    @Html.ActionLink("Details", "Details", new { id = item.IngredientName }) |
+                                    @Html.ActionLink("Delete", "Delete", new { id = item.IngredientName })
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                }
+            }
+        </div>
+    </div>
+</div>
+
+<div id="accordion">
+    @*Dairy*@
+    <div class="card">
+        <div class="card-header">
+            <a class="card-link" data-toggle="collapse" href="#Dairy-Category">
+                Dairy
+            </a>
+        </div>
+        <div id="Dairy-Category" class="collapse collapsing" data-parent="#accordion">
+            @foreach (var item in Model)
+            {
+                if (item.Category == LilChef.Data.IngredientCategories.CategoryType.Dairy)
+                {
+                    <div id="accordion">
+                        <div class="card">
+                            <div class="card-header">
+                                <a class="card-link" data-toggle="collapse" href="#Dairy">
+                                    @Html.DisplayFor(modelItem => item.IngredientName)
+                                </a>
+                            </div>
+                            <div id="Dairy" class="collapse collapsing" data-parent="#accordion">
+                                <div class="card-body">
+                                    @Html.DisplayFor(modelItem => item.Description)
+                                </div>
+                                <div class="links">
+                                    @Html.ActionLink("Edit", "Edit", new { id = item.IngredientName }) |
+                                    @Html.ActionLink("Details", "Details", new { id = item.IngredientName }) |
+                                    @Html.ActionLink("Delete", "Delete", new { id = item.IngredientName })
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                }
+            }
+        </div>
+    </div>
+</div>
+
+<div id="accordion">
+    @*Eggs*@
+    <div class="card">
+        <div class="card-header">
+            <a class="card-link" data-toggle="collapse" href="#Eggs-Category">
+                Eggs
+            </a>
+        </div>
+        <div id="Eggs-Category" class="collapse collapsing" data-parent="#accordion">
+            @foreach (var item in Model)
+            {
+                if (item.Category == LilChef.Data.IngredientCategories.CategoryType.Eggs)
+                {
+                    <div id="accordion">
+                        <div class="card">
+                            <div class="card-header">
+                                <a class="card-link" data-toggle="collapse" href="#Eggs">
+                                    @Html.DisplayFor(modelItem => item.IngredientName)
+                                </a>
+                            </div>
+                            <div id="Eggs" class="collapse collapsing" data-parent="#accordion">
+                                <div class="card-body">
+                                    @Html.DisplayFor(modelItem => item.Description)
+                                </div>
+                                <div class="links">
+                                    @Html.ActionLink("Edit", "Edit", new { id = item.IngredientName }) |
+                                    @Html.ActionLink("Details", "Details", new { id = item.IngredientName }) |
+                                    @Html.ActionLink("Delete", "Delete", new { id = item.IngredientName })
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                }
+            }
+        </div>
+    </div>
+</div>
+
+<div id="accordion">
+    @*Fruit*@
+    <div class="card">
+        <div class="card-header">
+            <a class="card-link" data-toggle="collapse" href="#Fruit-Category">
+                Fruit
+            </a>
+        </div>
+        <div id="Fruit-Category" class="collapse collapsing" data-parent="#accordion">
+            @foreach (var item in Model)
+            {
+                if (item.Category == LilChef.Data.IngredientCategories.CategoryType.Fruit)
+                {
+                    <div id="accordion">
+                        <div class="card">
+                            <div class="card-header">
+                                <a class="card-link" data-toggle="collapse" href="#Fruit">
+                                    @Html.DisplayFor(modelItem => item.IngredientName)
+                                </a>
+                            </div>
+                            <div id="Fruit" class="collapse collapsing" data-parent="#accordion">
+                                <div class="card-body">
+                                    @Html.DisplayFor(modelItem => item.Description)
+                                </div>
+                                <div class="links">
+                                    @Html.ActionLink("Edit", "Edit", new { id = item.IngredientName }) |
+                                    @Html.ActionLink("Details", "Details", new { id = item.IngredientName }) |
+                                    @Html.ActionLink("Delete", "Delete", new { id = item.IngredientName })
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                }
+            }
+        </div>
+    </div>
+</div>
+
+<div id="accordion">
+    <div class="card">
+        <div class="card-header">
+            <a class="card-link" data-toggle="collapse" href="#Grains-Category">
+                Grains
+            </a>
+        </div>
+        <div id="Grains-Category" class="collapse collapsing" data-parent="#accordion">
+            @foreach (var item in Model)
+            {
+                if (item.Category == LilChef.Data.IngredientCategories.CategoryType.Grains)
+                {
+                    <div id="accordion">
+                        <div class="card">
+                            <div class="card-header">
+                                <a class="card-link" data-toggle="collapse" href="#Grains">
+                                    @Html.DisplayFor(modelItem => item.IngredientName)
+                                </a>
+                            </div>
+                            <div id="Grains" class="collapse collapsing" data-parent="#accordion">
+                                <div class="card-body">
+                                    @Html.DisplayFor(modelItem => item.Description)
+                                </div>
+                                <div class="links">
+                                    @Html.ActionLink("Edit", "Edit", new { id = item.IngredientName }) |
+                                    @Html.ActionLink("Details", "Details", new { id = item.IngredientName }) |
+                                    @Html.ActionLink("Delete", "Delete", new { id = item.IngredientName })
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                }
+            }
+        </div>
+    </div>
+</div>
+
+<div id="accordion">
+    @*Legumes*@
+    <div class="card">
+        <div class="card-header">
+            <a class="card-link" data-toggle="collapse" href="#Legumes-Category">
+                Legumes
+            </a>
+        </div>
+        <div id="Legumes-Category" class="collapse collapsing" data-parent="#accordion">
+            @foreach (var item in Model)
+            {
+                if (item.Category == LilChef.Data.IngredientCategories.CategoryType.Legumes)
+                {
+                    <div id="accordion">
+                        <div class="card">
+                            <div class="card-header">
+                                <a class="card-link" data-toggle="collapse" href="#Legumes">
+                                    @Html.DisplayFor(modelItem => item.IngredientName)
+                                </a>
+                            </div>
+                            <div id="Legumes" class="collapse collapsing" data-parent="#accordion">
+                                <div class="card-body">
+                                    @Html.DisplayFor(modelItem => item.Description)
+                                </div>
+                                <div class="links">
+                                    @Html.ActionLink("Edit", "Edit", new { id = item.IngredientName }) |
+                                    @Html.ActionLink("Details", "Details", new { id = item.IngredientName }) |
+                                    @Html.ActionLink("Delete", "Delete", new { id = item.IngredientName })
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                }
+            }
+        </div>
+    </div>
+</div>
+
+<div id="accordion">
+    @*Meats*@
+    <div class="card">
+        <div class="card-header">
+            <a class="card-link" data-toggle="collapse" href="#Meats-Category">
+                Meats
+            </a>
+        </div>
+        <div id="Meats-Category" class="collapse collapsing" data-parent="#accordion">
+            @foreach (var item in Model)
+            {
+                if (item.Category == LilChef.Data.IngredientCategories.CategoryType.Meats)
+                {
+                    <div id="accordion">
+                        <div class="card">
+                            <div class="card-header">
+                                <a class="card-link" data-toggle="collapse" href="#Meats">
+                                    @Html.DisplayFor(modelItem => item.IngredientName)
+                                </a>
+                            </div>
+                            <div id="Meats" class="collapse collapsing" data-parent="#accordion">
+                                <div class="card-body">
+                                    @Html.DisplayFor(modelItem => item.Description)
+                                </div>
+                                <div class="links">
+                                    @Html.ActionLink("Edit", "Edit", new { id = item.IngredientName }) |
+                                    @Html.ActionLink("Details", "Details", new { id = item.IngredientName }) |
+                                    @Html.ActionLink("Delete", "Delete", new { id = item.IngredientName })
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                }
+            }
+        </div>
+    </div>
+</div>
+
+<div id="accordion">
+    @*Nuts*@
+    <div class="card">
+        <div class="card-header">
+            <a class="card-link" data-toggle="collapse" href="#Nuts-Category">
+                Nuts
+            </a>
+        </div>
+        <div id="Nuts-Category" class="collapse collapsing" data-parent="#accordion">
+            @foreach (var item in Model)
+            {
+                if (item.Category == LilChef.Data.IngredientCategories.CategoryType.Nuts)
+                {
+                    <div id="accordion">
+                        <div class="card">
+                            <div class="card-header">
+                                <a class="card-link" data-toggle="collapse" href="#Nuts">
+                                    @Html.DisplayFor(modelItem => item.IngredientName)
+                                </a>
+                            </div>
+                            <div id="Nuts" class="collapse collapsing" data-parent="#accordion">
+                                <div class="card-body">
+                                    @Html.DisplayFor(modelItem => item.Description)
+                                </div>
+                                <div class="links">
+                                    @Html.ActionLink("Edit", "Edit", new { id = item.IngredientName }) |
+                                    @Html.ActionLink("Details", "Details", new { id = item.IngredientName }) |
+                                    @Html.ActionLink("Delete", "Delete", new { id = item.IngredientName })
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                }
+            }
+        </div>
+    </div>
+</div>
+
+<div id="accordion">
+    @*Pasta*@
+    <div class="card">
+        <div class="card-header">
+            <a class="card-link" data-toggle="collapse" href="#Pasta-Category">
+                Pasta
+            </a>
+        </div>
+        <div id="Pasta-Category" class="collapse collapsing" data-parent="#accordion">
+            @foreach (var item in Model)
+            {
+                if (item.Category == LilChef.Data.IngredientCategories.CategoryType.Pasta)
+                {
+                    <div id="accordion">
+                        <div class="card">
+                            <div class="card-header">
+                                <a class="card-link" data-toggle="collapse" href="#Pasta">
+                                    @Html.DisplayFor(modelItem => item.IngredientName)
+                                </a>
+                            </div>
+                            <div id="Pasta" class="collapse collapsing" data-parent="#accordion">
+                                <div class="card-body">
+                                    @Html.DisplayFor(modelItem => item.Description)
+                                </div>
+                                <div class="links">
+                                    @Html.ActionLink("Edit", "Edit", new { id = item.IngredientName }) |
+                                    @Html.ActionLink("Details", "Details", new { id = item.IngredientName }) |
+                                    @Html.ActionLink("Delete", "Delete", new { id = item.IngredientName })
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                }
+            }
+        </div>
+    </div>
+</div>
+
+<div id="accordion">
+    @*Seafood*@
+
+    <div class="card">
+        <div class="card-header">
+            <a class="card-link" data-toggle="collapse" href="#Seafood-Category">
+                Seafood
+            </a>
+        </div>
+        <div id="Seafood-Category" class="collapse collapsing" data-parent="#accordion">
+            @foreach (var item in Model)
+            {
+                if (item.Category == LilChef.Data.IngredientCategories.CategoryType.Seafood)
+                {
+                    <div id="accordion">
+                        <div class="card">
+                            <div class="card-header">
+                                <a class="card-link" data-toggle="collapse" href="#Seafood">
+                                    @Html.DisplayFor(modelItem => item.IngredientName)
+                                </a>
+                            </div>
+                            <div id="Seafood" class="collapse collapsing" data-parent="#accordion">
+                                <div class="card-body">
+                                    @Html.DisplayFor(modelItem => item.Description)
+                                </div>
+                                <div class="links">
+                                    @Html.ActionLink("Edit", "Edit", new { id = item.IngredientName }) |
+                                    @Html.ActionLink("Details", "Details", new { id = item.IngredientName }) |
+                                    @Html.ActionLink("Delete", "Delete", new { id = item.IngredientName })
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                }
+            }
+        </div>
+    </div>
+</div>
+
+<div id="accordion">
+    @*Sweets*@
+    <div class="card">
+        <div class="card-header">
+            <a class="card-link" data-toggle="collapse" href="#Sweets-Category">
+                Sweets
+            </a>
+        </div>
+        <div id="Sweets-Category" class="collapse collapsing" data-parent="#accordion">
+            @foreach (var item in Model)
+            {
+                if (item.Category == LilChef.Data.IngredientCategories.CategoryType.Sweets)
+                {
+                    <div id="accordion">
+                        <div class="card">
+                            <div class="card-header">
+                                <a class="card-link" data-toggle="collapse" href="#Sweets">
+                                    @Html.DisplayFor(modelItem => item.IngredientName)
+                                </a>
+                            </div>
+                            <div id="Sweets" class="collapse collapsing" data-parent="#accordion">
+                                <div class="card-body">
+                                    @Html.DisplayFor(modelItem => item.Description)
+                                </div>
+                                <div class="links">
+                                    @Html.ActionLink("Edit", "Edit", new { id = item.IngredientName }) |
+                                    @Html.ActionLink("Details", "Details", new { id = item.IngredientName }) |
+                                    @Html.ActionLink("Delete", "Delete", new { id = item.IngredientName })
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                }
+            }
+        </div>
+    </div>
+</div>
+
+<div id="accordion">
+    @*Vegetables*@
+    <div class="card">
+        <div class="card-header">
+            <a class="card-link" data-toggle="collapse" href="#Vegetables-Category">
+                Vegetables
+            </a>
+        </div>
+        <div id="Vegetables-Category" class="collapse collapsing" data-parent="#accordion">
+            @foreach (var item in Model)
+            {
+                if (item.Category == LilChef.Data.IngredientCategories.CategoryType.Vegetables)
+                {
+                    <div id="accordion">
+                        <div class="card">
+                            <div class="card-header">
+                                <a class="card-link" data-toggle="collapse" href="#Vegetables">
+                                    @Html.DisplayFor(modelItem => item.IngredientName)
+                                </a>
+                            </div>
+                            <div id="Vegetables" class="collapse collapsing" data-parent="#accordion">
+                                <div class="card-body">
+                                    @Html.DisplayFor(modelItem => item.Description)
+                                </div>
+                                <div class="links">
+                                    @Html.ActionLink("Edit", "Edit", new { id = item.IngredientName }) |
+                                    @Html.ActionLink("Details", "Details", new { id = item.IngredientName }) |
+                                    @Html.ActionLink("Delete", "Delete", new { id = item.IngredientName })
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                }
+            }
+        </div>
+    </div>
+</div>
+
+
+
+
+
+
+
+@*<table class="table">
+        <tr>
+            <th>
+                @Html.DisplayNameFor(model => model.IngredientName)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Description)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Category)
+            </th>
+            <th></th>
+        </tr>
+
+        @foreach (var item in Model)
+        {
+            <tr>
+                <td>
+                    @Html.DisplayFor(modelItem => item.IngredientName)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.Description)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.Category)
+                </td>
+                <td>
+                    @Html.ActionLink("Edit", "Edit", new { id = item.IngredientId }) |
+                    @Html.ActionLink("Details", "Details", new { id = item.IngredientId }) |
+                    @Html.ActionLink("Delete", "Delete", new { id = item.IngredientId })
+                </td>
+            </tr>
+        }
+
+    </table>*@
