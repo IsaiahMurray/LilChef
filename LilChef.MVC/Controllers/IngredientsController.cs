@@ -45,6 +45,7 @@ namespace LilChef.MVC.Controllers
         // POST: Ingredients/Create
         [HttpPost]
         [ValidateAntiForgeryToken]
+        [Authorize(Roles = "Admin")]
         public ActionResult Create([Bind(Include = "IngredientId,IngredientName,Description,HasGluten,HasNuts,HasEggs,HasSoy,HasDairy,IsVegan,IsVegetarian,IsPescatarian,IsKetoFriendly,Category")] Ingredient ingredient)
         {
             if (ModelState.IsValid)
@@ -58,6 +59,7 @@ namespace LilChef.MVC.Controllers
         }
 
         // GET: Ingredients/Edit/5
+        [Authorize(Roles = "Admin")]
         public ActionResult Edit(int? id)
         {
             if (id == null)
@@ -75,6 +77,7 @@ namespace LilChef.MVC.Controllers
         // POST: Ingredients/Edit/id
         [HttpPost]
         [ValidateAntiForgeryToken]
+        [Authorize(Roles = "Admin")]
         public ActionResult Edit([Bind(Include = "IngredientId,IngredientName,Description,HasGluten,HasNuts,HasEggs,HasSoy,HasDairy,IsVegan,IsVegetarian,IsPescatarian,IsKetoFriendly,Category")] Ingredient ingredient)
         {
             if (ModelState.IsValid)
@@ -87,6 +90,7 @@ namespace LilChef.MVC.Controllers
         }
 
         // GET: Ingredients/Delete/5
+        [Authorize(Roles = "Admin")]
         public ActionResult Delete(int? id)
         {
             if (id == null)
@@ -104,6 +108,7 @@ namespace LilChef.MVC.Controllers
         // POST: Ingredients/Delete/5
         [HttpPost, ActionName("Delete")]
         [ValidateAntiForgeryToken]
+        [Authorize(Roles = "Admin")]
         public ActionResult DeleteConfirmed(int id)
         {
             Ingredient ingredient = _db.Ingredients.Find(id);

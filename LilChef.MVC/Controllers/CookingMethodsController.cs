@@ -63,6 +63,7 @@ namespace LilChef.MVC.Controllers
         }
 
         // GET: CookingMethods/Create
+        [Authorize(Roles = "Admin")]
         public ActionResult Create()
         {
             return View();
@@ -71,6 +72,7 @@ namespace LilChef.MVC.Controllers
         // POST: CookingMethods/Create
         [HttpPost]
         [ValidateAntiForgeryToken]
+        [Authorize(Roles = "Admin")]
         public ActionResult Create([Bind(Include = "CookingMethodId,CookingMethodName,Description,Difficulty")] CookingMethod cookingMethod)
         {
             if (ModelState.IsValid)
@@ -84,6 +86,7 @@ namespace LilChef.MVC.Controllers
         }
 
         // GET: CookingMethods/Edit/5
+        [Authorize(Roles = "Admin")]
         public ActionResult Edit(int? id)
         {
             if (id == null)
@@ -101,6 +104,7 @@ namespace LilChef.MVC.Controllers
         // POST: CookingMethods/Edit/id
         [HttpPost]
         [ValidateAntiForgeryToken]
+        [Authorize(Roles = "Admin")]
         public ActionResult Edit([Bind(Include = "CookingMethodId,CookingMethodName,Description,Difficulty")] CookingMethod cookingMethod)
         {
             if (ModelState.IsValid)
@@ -113,6 +117,7 @@ namespace LilChef.MVC.Controllers
         }
 
         // GET: CookingMethods/Delete/5
+        [Authorize(Roles = "Admin")]
         public ActionResult Delete(int? id)
         {
             if (id == null)
@@ -130,6 +135,7 @@ namespace LilChef.MVC.Controllers
         // POST: CookingMethods/Delete/5
         [HttpPost, ActionName("Delete")]
         [ValidateAntiForgeryToken]
+        [Authorize(Roles = "Admin")]
         public ActionResult DeleteConfirmed(int id)
         {
             CookingMethod cookingMethod = _db.CookingMethods.Find(id);
