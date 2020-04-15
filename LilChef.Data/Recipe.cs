@@ -15,8 +15,10 @@ namespace LilChef.Data
     {
         [Key]
         public int RecipeId { get; set; }
+
         [Required]
-        public Guid AuthorId { get; set; }
+        [EmailAddress]
+        public string Author { get; set; }
         [Display(Name = "Recipe")]
         public string RecipeName { get; set; }
         public string Description { get; set; }

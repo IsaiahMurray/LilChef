@@ -42,5 +42,6 @@ namespace LilChef.Models.RecipeModels
         [Display(Name = "Keto Friendly")]
         public bool IsKetoFriendly { get; set; }
         public Difficulty Difficulty { get; set; }
+        public string Author { get; set; }
     }
 }

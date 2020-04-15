@@ -1,8 +1,10 @@
 ﻿using LilChef.MVC.Data;
+using LilChef.MVC.Models;
 using Microsoft.AspNet.Identity.EntityFramework;
 using System;
 using System.Collections.Generic;
 using System.Linq;
+using System.Threading.Tasks;
 using System.Web;
 using System.Web.Mvc;
 
@@ -16,6 +18,7 @@ namespace LilChef.MVC.Controllers
            _context = new ApplicationDbContext();
         }
         //Get all roles
+        [Authorize(Roles = "Lord")]
         public ActionResult Index()
         {
             var roles = _context.Roles.ToList();
@@ -23,6 +26,7 @@ namespace LilChef.MVC.Controllers
         }
 
         //Create new role
+        [Authorize(Roles = "Lord")]
         public ActionResult Create()
         {
             var role = new IdentityRole();
@@ -30,11 +34,13 @@ namespace LilChef.MVC.Controllers
         }
 
         [HttpPost]
+        [Authorize(Roles = "Admin")]
         public ActionResult Create(IdentityRole role)
         {
             _context.Roles.Add(role);
             _context.SaveChanges();
             return RedirectToAction("Index");
         }
+
     }
 }

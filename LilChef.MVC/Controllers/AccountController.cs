@@ -144,9 +144,9 @@ namespace LilChef.MVC.Controllers
             return View();
         }
 
-        [AllowAnonymous]
+        [Authorize(Roles = "Admin")]
         [HttpGet]
-        public ActionResult ResgisterRole()
+        public ActionResult RegisterRole()
         {
             //Creating a SelectList for the dropdowns and making it accessible to the views
             ViewBag.Name = new SelectList(_context.Roles.ToList(), "Name", "Name");
@@ -156,7 +156,7 @@ namespace LilChef.MVC.Controllers
 
         //POST: Account/RegisterRole
         [HttpPost]
-        [AllowAnonymous]
+        [Authorize(Roles = "Admin")]
         [ValidateAntiForgeryToken]
         public async Task<ActionResult> RegisterRole(RegisterViewModel model, ApplicationUser user)
         {
@@ -171,6 +171,32 @@ namespace LilChef.MVC.Controllers
 
             return RedirectToAction("Index", "Home");
         }
+
+        //[HttpGet]
+        //public ActionResult RemoveRole()
+        //{
+        //    //Creating a SelectList for the dropdowns and making it accessible to the views
+        //    ViewBag.Name = new SelectList(_context.Roles.ToList(), "Name", "Name");
+        //    ViewBag.UserName = new SelectList(_context.Users.ToList(), "UserName", "UserName");
+        //    return View();
+        //}
+
+        //[HttpPost]
+        //// [Authorize(Roles = "Admin")]
+        //[ValidateAntiForgeryToken]
+        //public async Task<ActionResult> RemoveRole(RegisterViewModel model, ApplicationUser user)
+        //{
+        //    var userId = _context.Users.Where(i => i.UserName == user.UserName).Select(s => s.Id);
+        //    string updateId = "";
+        //    foreach (var i in userId)
+        //    {
+        //        updateId = i.ToString();
+        //    }
+        //    //Assign Role to user here
+        //    await this.UserManager.RemoveFromRoleAsync(updateId, model.Name);
+            
+        //    return RedirectToAction("Index", "Home");
+        //}
 
         //
         // POST: /Account/Register
