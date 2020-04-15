@@ -17,15 +17,21 @@ namespace LilChef.Data
         public int RecipeId { get; set; }
 
         [Required]
+        public Guid AuthorId { get; set; }
+
+        [Required]
         [EmailAddress]
         public string Author { get; set; }
+
         [Display(Name = "Recipe")]
         public string RecipeName { get; set; }
         public string Description { get; set; }
+
         [Display(Name = "Ingredients")]
         public string IngredientItems { get; set; }
         
         public string Procedure { get; set; }
+
         [Display(Name = "Contains Gluten")]
         public bool HasGluten { get; set; }
 
@@ -37,6 +43,7 @@ namespace LilChef.Data
 
         [Display(Name = "Contains Soy")]
         public bool HasSoy { get; set; }
+
         [Display(Name = "Contains Dairy")]
         public bool HasDairy { get; set; }
 

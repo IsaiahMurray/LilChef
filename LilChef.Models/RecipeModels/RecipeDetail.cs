@@ -13,9 +13,12 @@ namespace LilChef.Models.RecipeModels
         [Display(Name = "Recipe")]
         public string RecipeName { get; set; }
         public string Description { get; set; }
+
         [Display(Name = "Ingredients")]
         public string IngredientItems { get; set; }
+
         public string Procedure { get; set; }
+
         [Display(Name = "Contains Gluten")]
         public bool HasGluten { get; set; }
 

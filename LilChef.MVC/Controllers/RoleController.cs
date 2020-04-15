@@ -34,7 +34,7 @@ namespace LilChef.MVC.Controllers
         }
 
         [HttpPost]
-        [Authorize(Roles = "Admin")]
+        [Authorize(Roles = "Lord")]
         public ActionResult Create(IdentityRole role)
         {
             _context.Roles.Add(role);
@@ -42,5 +42,11 @@ namespace LilChef.MVC.Controllers
             return RedirectToAction("Index");
         }
 
+        public ActionResult Delete(IdentityRole role)
+        {
+            _context.Roles.Remove(role);
+            _context.SaveChanges();
+            return RedirectToAction("Index");
+        }
     }
 }

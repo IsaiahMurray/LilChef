@@ -11,6 +11,8 @@ namespace LilChef.Models.RecipeModels
 {
     public class RecipeListItem
     {
+        [EmailAddress]
+        public string Author { get; set; }
         public string RecipeName { get; set; }
         
         [Display(Name = "Contains Gluten")]

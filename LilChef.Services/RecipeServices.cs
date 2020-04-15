@@ -68,7 +68,8 @@ namespace LilChef.Services
                                     IsVegetarian = e.IsVegetarian,
                                     IsPescatarian = e.IsPescatarian,
                                     IsKetoFriendly = e.IsKetoFriendly,
-                                    Difficulty = e.Difficulty
+                                    Difficulty = e.Difficulty,
+                                    Author = e.Author
                                 }
                         );
                 return query.ToArray();
@@ -96,7 +97,8 @@ namespace LilChef.Services
                                     IsVegetarian = e.IsVegetarian,
                                     IsPescatarian = e.IsPescatarian,
                                     IsKetoFriendly = e.IsKetoFriendly,
-                                    Difficulty = e.Difficulty
+                                    Difficulty = e.Difficulty,
+                                    Author = e.Author
                                 }
                         );
                 return query.ToArray();
@@ -124,7 +126,8 @@ namespace LilChef.Services
                                     IsVegetarian = e.IsVegetarian,
                                     IsPescatarian = e.IsPescatarian,
                                     IsKetoFriendly = e.IsKetoFriendly,
-                                    Difficulty = e.Difficulty
+                                    Difficulty = e.Difficulty,
+                                    Author = e.Author
                                 }
                         );
                 return query.ToArray();
@@ -152,7 +155,8 @@ namespace LilChef.Services
                                     IsVegetarian = e.IsVegetarian,
                                     IsPescatarian = e.IsPescatarian,
                                     IsKetoFriendly = e.IsKetoFriendly,
-                                    Difficulty = e.Difficulty
+                                    Difficulty = e.Difficulty,
+                                    Author = e.Author
                                 }
                         );
                 return query.ToArray();
@@ -180,7 +184,8 @@ namespace LilChef.Services
                                     IsVegetarian = e.IsVegetarian,
                                     IsPescatarian = e.IsPescatarian,
                                     IsKetoFriendly = e.IsKetoFriendly,
-                                    Difficulty = e.Difficulty
+                                    Difficulty = e.Difficulty,
+                                    Author = e.Author
                                 }
                         );
                 return query.ToArray();
@@ -208,7 +213,8 @@ namespace LilChef.Services
                                     IsVegetarian = e.IsVegetarian,
                                     IsPescatarian = e.IsPescatarian,
                                     IsKetoFriendly = e.IsKetoFriendly,
-                                    Difficulty = e.Difficulty
+                                    Difficulty = e.Difficulty,
+                                    Author = e.Author
                                 }
                         );
                 return query.ToArray();
@@ -236,7 +242,8 @@ namespace LilChef.Services
                                     IsVegetarian = e.IsVegetarian,
                                     IsPescatarian = e.IsPescatarian,
                                     IsKetoFriendly = e.IsKetoFriendly,
-                                    Difficulty = e.Difficulty
+                                    Difficulty = e.Difficulty,
+                                    Author = e.Author
                                 }
                         );
                 return query.ToArray();
@@ -264,7 +271,8 @@ namespace LilChef.Services
                                     IsVegetarian = e.IsVegetarian,
                                     IsPescatarian = e.IsPescatarian,
                                     IsKetoFriendly = e.IsKetoFriendly,
-                                    Difficulty = e.Difficulty
+                                    Difficulty = e.Difficulty,
+                                    Author = e.Author
                                 }
                         );
                 return query.ToArray();
@@ -292,7 +300,8 @@ namespace LilChef.Services
                                     IsVegetarian = e.IsVegetarian,
                                     IsPescatarian = e.IsPescatarian,
                                     IsKetoFriendly = e.IsKetoFriendly,
-                                    Difficulty = e.Difficulty
+                                    Difficulty = e.Difficulty,
+                                    Author = e.Author
                                 }
                         );
                 return query.ToArray();
@@ -320,7 +329,8 @@ namespace LilChef.Services
                                     IsVegetarian = e.IsVegetarian,
                                     IsPescatarian = e.IsPescatarian,
                                     IsKetoFriendly = e.IsKetoFriendly,
-                                    Difficulty = e.Difficulty
+                                    Difficulty = e.Difficulty,
+                                    Author = e.Author
                                 }
                         );
                 return query.ToArray();
@@ -348,7 +358,7 @@ namespace LilChef.Services
                                     IsVegetarian = e.IsVegetarian,
                                     IsPescatarian = e.IsPescatarian,
                                     IsKetoFriendly = e.IsKetoFriendly,
-                                    Difficulty = e.Difficulty
+                                    Difficulty = e.Difficulty,
                                 }
                         );
                 return query.ToArray();
@@ -376,7 +386,8 @@ namespace LilChef.Services
                                     IsVegetarian = e.IsVegetarian,
                                     IsPescatarian = e.IsPescatarian,
                                     IsKetoFriendly = e.IsKetoFriendly,
-                                    Difficulty = e.Difficulty
+                                    Difficulty = e.Difficulty,
+                                    Author = e.Author
                                 }
                         );
                 return query.ToArray();

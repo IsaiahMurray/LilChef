@@ -4,16 +4,25 @@ using System.Data;
 using System.Data.Entity;
 using System.Linq;
 using System.Net;
+using System.Security.Principal;
 using System.Web;
 using System.Web.Mvc;
 using LilChef.Data;
 using LilChef.MVC.Data;
+using Microsoft.AspNet.Identity;
 
 namespace LilChef.MVC.Controllers
 {
     public class RecipesController : Controller
     {
         private ApplicationDbContext _db = new ApplicationDbContext();
+
+        public string GetEmailAdress()
+        {
+            var userId = User.Identity.GetUserId();
+            var user = _db.Users.FirstOrDefault(u => u.Id == userId);
+            return user.Email;
+        }
 
         // GET: Recipes
         public ActionResult Index()
@@ -60,45 +69,60 @@ namespace LilChef.MVC.Controllers
         // GET: Recipes/Edit/5
         public ActionResult Edit(int? id)
         {
-            if (id == null)
-            {
-                return new HttpStatusCodeResult(HttpStatusCode.BadRequest);
-            }
             Recipe recipe = _db.Recipes.Find(id);
-            if (recipe == null)
+            var user = this.GetEmailAdress();
+            if (user == recipe.Author || User.IsInRole("Admin,Lord"))
             {
-                return HttpNotFound();
+                if (id == null)
+                {
+                    return new HttpStatusCodeResult(HttpStatusCode.BadRequest);
+                }
+                if (recipe == null)
+                {
+                    return HttpNotFound();
+                }
+                return View(recipe);
             }
-            return View(recipe);
+            return new HttpStatusCodeResult(HttpStatusCode.Unauthorized);
         }
 
         // POST: Recipes/Edit/id
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public ActionResult Edit([Bind(Include = "RecipeId,RecipeName,Description,IngredientItems,Procedure,HasGluten,HasNuts,HasEggs,HasSoy,HasDairy,IsVegan,IsVegetarian,IsPescatarian,IsKetoFriendly,Difficulty")] Recipe recipe)
+        public ActionResult Edit(Recipe recipe)
         {
-            if (ModelState.IsValid)
+            var user = this.GetEmailAdress();
+            if (user == recipe.Author || User.IsInRole("Admin,Lord"))
             {
-                _db.Entry(recipe).State = EntityState.Modified;
-                _db.SaveChanges();
-                return RedirectToAction("Index");
+                if (ModelState.IsValid)
+                {
+                    _db.Entry(recipe).State = EntityState.Modified;
+                    _db.SaveChanges();
+                    return RedirectToAction("Index");
+                }
+                return View(recipe);
             }
-            return View(recipe);
+            return new HttpStatusCodeResult(HttpStatusCode.Unauthorized);
         }
 
         // GET: Recipes/Delete/5
         public ActionResult Delete(int? id)
         {
-            if (id == null)
-            {
-                return new HttpStatusCodeResult(HttpStatusCode.BadRequest);
-            }
             Recipe recipe = _db.Recipes.Find(id);
-            if (recipe == null)
+            var user = this.GetEmailAdress();
+            if (user == recipe.Author || User.IsInRole("Admin,Lord"))
             {
-                return HttpNotFound();
+                if (id == null)
+                {
+                    return new HttpStatusCodeResult(HttpStatusCode.BadRequest);
+                }
+                if (recipe == null)
+                {
+                    return HttpNotFound();
+                }
+                return View(recipe);
             }
-            return View(recipe);
+            return new HttpStatusCodeResult(HttpStatusCode.Unauthorized);
         }
 
         // POST: Recipes/Delete/5
