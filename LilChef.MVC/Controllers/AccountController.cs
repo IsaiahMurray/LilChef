@@ -143,9 +143,9 @@ namespace LilChef.MVC.Controllers
         {
             return View();
         }
-
-        //[Authorize(Roles = "Lord")]
+        
         [HttpGet]
+        [Authorize(Roles = "Lord")]
         public ActionResult RegisterRole()
         {
             //Creating a SelectList for the dropdowns and making it accessible to the views
@@ -156,7 +156,7 @@ namespace LilChef.MVC.Controllers
 
         //POST: Account/RegisterRole
         [HttpPost]
-        //[Authorize(Roles = "Lord")]
+        [Authorize(Roles = "Lord")]
         [ValidateAntiForgeryToken]
         public async Task<ActionResult> RegisterRole(RegisterViewModel model, ApplicationUser user)
         {

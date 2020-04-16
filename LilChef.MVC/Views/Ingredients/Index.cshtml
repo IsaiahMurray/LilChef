@@ -5,7 +5,6 @@
 }
 
 <h2>Ingredients</h2>
-Alternatives = 0, Meats = 1, Seafood = 2, Vegetables = 3, Fruit = 4, Dairy = 5, Pasta = 6, Legumes = 7, Eggs = 8, Nuts = 9, Grains = 10, Condiments = 11, Chips_and_Snacks = 12, Baking_Goods = 13, Breads = 14, Sweets = 15
 <p>
     @Html.ActionLink("Create New", "Create")
 </p>
@@ -14,7 +13,7 @@ Alternatives = 0, Meats = 1, Seafood = 2, Vegetables = 3, Fruit = 4, Dairy = 5, 
     @*Alternatives*@
     <div class="card">
         <div class="card-header">
-            <a class="card-link" data-toggle="collapse" href="#Alternatives-Category">
+            <a class="category-link" data-toggle="collapse" href="#Alternatives-Category">
                 Alternatives
             </a>
         </div>
@@ -35,9 +34,9 @@ Alternatives = 0, Meats = 1, Seafood = 2, Vegetables = 3, Fruit = 4, Dairy = 5, 
                                     @Html.DisplayFor(modelItem => item.Description)
                                 </div>
                                 <div class="links">
-                                    @Html.ActionLink("Edit", "Edit", new { id = item.IngredientName }) |
-                                    @Html.ActionLink("Details", "Details", new { id = item.IngredientName }) |
-                                    @Html.ActionLink("Delete", "Delete", new { id = item.IngredientName })
+                                    @Html.ActionLink("Edit", "Edit", new { id = item.IngredientId }) |
+                                    @Html.ActionLink("Details", "Details", new { id = item.IngredientId }) |
+                                    @Html.ActionLink("Delete", "Delete", new { id = item.IngredientId })
                                 </div>
                             </div>
                         </div>
@@ -52,7 +51,7 @@ Alternatives = 0, Meats = 1, Seafood = 2, Vegetables = 3, Fruit = 4, Dairy = 5, 
     @*Baking*@
     <div class="card">
         <div class="card-header">
-            <a class="card-link" data-toggle="collapse" href="#Baking-Category">
+            <a class="category-link" data-toggle="collapse" href="#Baking-Category">
                 Baking Goods
             </a>
         </div>
@@ -73,9 +72,9 @@ Alternatives = 0, Meats = 1, Seafood = 2, Vegetables = 3, Fruit = 4, Dairy = 5, 
                                     @Html.DisplayFor(modelItem => item.Description)
                                 </div>
                                 <div class="links">
-                                    @Html.ActionLink("Edit", "Edit", new { id = item.IngredientName }) |
-                                    @Html.ActionLink("Details", "Details", new { id = item.IngredientName }) |
-                                    @Html.ActionLink("Delete", "Delete", new { id = item.IngredientName })
+                                    @Html.ActionLink("Edit", "Edit", new { id = item.IngredientId }) |
+                                    @Html.ActionLink("Details", "Details", new { id = item.IngredientId }) |
+                                    @Html.ActionLink("Delete", "Delete", new { id = item.IngredientId })
                                 </div>
                             </div>
                         </div>
@@ -90,7 +89,7 @@ Alternatives = 0, Meats = 1, Seafood = 2, Vegetables = 3, Fruit = 4, Dairy = 5, 
     @*Breads*@
     <div class="card">
         <div class="card-header">
-            <a class="card-link" data-toggle="collapse" href="#Breads-Category">
+            <a class="category-link" data-toggle="collapse" href="#Breads-Category">
                 Breads
             </a>
         </div>
@@ -111,9 +110,9 @@ Alternatives = 0, Meats = 1, Seafood = 2, Vegetables = 3, Fruit = 4, Dairy = 5, 
                                     @Html.DisplayFor(modelItem => item.Description)
                                 </div>
                                 <div class="links">
-                                    @Html.ActionLink("Edit", "Edit", new { id = item.IngredientName }) |
-                                    @Html.ActionLink("Details", "Details", new { id = item.IngredientName }) |
-                                    @Html.ActionLink("Delete", "Delete", new { id = item.IngredientName })
+                                    @Html.ActionLink("Edit", "Edit", new { id = item.IngredientId }) |
+                                    @Html.ActionLink("Details", "Details", new { id = item.IngredientId }) |
+                                    @Html.ActionLink("Delete", "Delete", new { id = item.IngredientId })
                                 </div>
                             </div>
                         </div>
@@ -128,7 +127,7 @@ Alternatives = 0, Meats = 1, Seafood = 2, Vegetables = 3, Fruit = 4, Dairy = 5, 
     @*Chips and Snacks*@
     <div class="card">
         <div class="card-header">
-            <a class="card-link" data-toggle="collapse" href="#Chips-Category">
+            <a class="category-link" data-toggle="collapse" href="#Chips-Category">
                 Chips and Snacks
             </a>
         </div>
@@ -149,9 +148,9 @@ Alternatives = 0, Meats = 1, Seafood = 2, Vegetables = 3, Fruit = 4, Dairy = 5, 
                                     @Html.DisplayFor(modelItem => item.Description)
                                 </div>
                                 <div class="links">
-                                    @Html.ActionLink("Edit", "Edit", new { id = item.IngredientName }) |
-                                    @Html.ActionLink("Details", "Details", new { id = item.IngredientName }) |
-                                    @Html.ActionLink("Delete", "Delete", new { id = item.IngredientName })
+                                    @Html.ActionLink("Edit", "Edit", new { id = item.IngredientId }) |
+                                    @Html.ActionLink("Details", "Details", new { id = item.IngredientId }) |
+                                    @Html.ActionLink("Delete", "Delete", new { id = item.IngredientId })
                                 </div>
                             </div>
                         </div>
@@ -166,7 +165,7 @@ Alternatives = 0, Meats = 1, Seafood = 2, Vegetables = 3, Fruit = 4, Dairy = 5, 
     @*Condiments*@
     <div class="card">
         <div class="card-header">
-            <a class="card-link" data-toggle="collapse" href="#Condiments-Category">
+            <a class="category-link" data-toggle="collapse" href="#Condiments-Category">
                 Condiments
             </a>
         </div>
@@ -187,9 +186,9 @@ Alternatives = 0, Meats = 1, Seafood = 2, Vegetables = 3, Fruit = 4, Dairy = 5, 
                                     @Html.DisplayFor(modelItem => item.Description)
                                 </div>
                                 <div class="links">
-                                    @Html.ActionLink("Edit", "Edit", new { id = item.IngredientName }) |
-                                    @Html.ActionLink("Details", "Details", new { id = item.IngredientName }) |
-                                    @Html.ActionLink("Delete", "Delete", new { id = item.IngredientName })
+                                    @Html.ActionLink("Edit", "Edit", new { id = item.IngredientId }) |
+                                    @Html.ActionLink("Details", "Details", new { id = item.IngredientId }) |
+                                    @Html.ActionLink("Delete", "Delete", new { id = item.IngredientId })
                                 </div>
                             </div>
                         </div>
@@ -204,7 +203,7 @@ Alternatives = 0, Meats = 1, Seafood = 2, Vegetables = 3, Fruit = 4, Dairy = 5, 
     @*Dairy*@
     <div class="card">
         <div class="card-header">
-            <a class="card-link" data-toggle="collapse" href="#Dairy-Category">
+            <a class="category-link" data-toggle="collapse" href="#Dairy-Category">
                 Dairy
             </a>
         </div>
@@ -225,9 +224,9 @@ Alternatives = 0, Meats = 1, Seafood = 2, Vegetables = 3, Fruit = 4, Dairy = 5, 
                                     @Html.DisplayFor(modelItem => item.Description)
                                 </div>
                                 <div class="links">
-                                    @Html.ActionLink("Edit", "Edit", new { id = item.IngredientName }) |
-                                    @Html.ActionLink("Details", "Details", new { id = item.IngredientName }) |
-                                    @Html.ActionLink("Delete", "Delete", new { id = item.IngredientName })
+                                    @Html.ActionLink("Edit", "Edit", new { id = item.IngredientId }) |
+                                    @Html.ActionLink("Details", "Details", new { id = item.IngredientId }) |
+                                    @Html.ActionLink("Delete", "Delete", new { id = item.IngredientId })
                                 </div>
                             </div>
                         </div>
@@ -242,7 +241,7 @@ Alternatives = 0, Meats = 1, Seafood = 2, Vegetables = 3, Fruit = 4, Dairy = 5, 
     @*Eggs*@
     <div class="card">
         <div class="card-header">
-            <a class="card-link" data-toggle="collapse" href="#Eggs-Category">
+            <a class="category-link" data-toggle="collapse" href="#Eggs-Category">
                 Eggs
             </a>
         </div>
@@ -263,9 +262,9 @@ Alternatives = 0, Meats = 1, Seafood = 2, Vegetables = 3, Fruit = 4, Dairy = 5, 
                                     @Html.DisplayFor(modelItem => item.Description)
                                 </div>
                                 <div class="links">
-                                    @Html.ActionLink("Edit", "Edit", new { id = item.IngredientName }) |
-                                    @Html.ActionLink("Details", "Details", new { id = item.IngredientName }) |
-                                    @Html.ActionLink("Delete", "Delete", new { id = item.IngredientName })
+                                    @Html.ActionLink("Edit", "Edit", new { id = item.IngredientId }) |
+                                    @Html.ActionLink("Details", "Details", new { id = item.IngredientId }) |
+                                    @Html.ActionLink("Delete", "Delete", new { id = item.IngredientId })
                                 </div>
                             </div>
                         </div>
@@ -280,7 +279,7 @@ Alternatives = 0, Meats = 1, Seafood = 2, Vegetables = 3, Fruit = 4, Dairy = 5, 
     @*Fruit*@
     <div class="card">
         <div class="card-header">
-            <a class="card-link" data-toggle="collapse" href="#Fruit-Category">
+            <a class="category-link" data-toggle="collapse" href="#Fruit-Category">
                 Fruit
             </a>
         </div>
@@ -301,9 +300,9 @@ Alternatives = 0, Meats = 1, Seafood = 2, Vegetables = 3, Fruit = 4, Dairy = 5, 
                                     @Html.DisplayFor(modelItem => item.Description)
                                 </div>
                                 <div class="links">
-                                    @Html.ActionLink("Edit", "Edit", new { id = item.IngredientName }) |
-                                    @Html.ActionLink("Details", "Details", new { id = item.IngredientName }) |
-                                    @Html.ActionLink("Delete", "Delete", new { id = item.IngredientName })
+                                    @Html.ActionLink("Edit", "Edit", new { id = item.IngredientId }) |
+                                    @Html.ActionLink("Details", "Details", new { id = item.IngredientId }) |
+                                    @Html.ActionLink("Delete", "Delete", new { id = item.IngredientId })
                                 </div>
                             </div>
                         </div>
@@ -317,7 +316,7 @@ Alternatives = 0, Meats = 1, Seafood = 2, Vegetables = 3, Fruit = 4, Dairy = 5, 
 <div id="accordion">
     <div class="card">
         <div class="card-header">
-            <a class="card-link" data-toggle="collapse" href="#Grains-Category">
+            <a class="category-link" data-toggle="collapse" href="#Grains-Category">
                 Grains
             </a>
         </div>
@@ -338,9 +337,9 @@ Alternatives = 0, Meats = 1, Seafood = 2, Vegetables = 3, Fruit = 4, Dairy = 5, 
                                     @Html.DisplayFor(modelItem => item.Description)
                                 </div>
                                 <div class="links">
-                                    @Html.ActionLink("Edit", "Edit", new { id = item.IngredientName }) |
-                                    @Html.ActionLink("Details", "Details", new { id = item.IngredientName }) |
-                                    @Html.ActionLink("Delete", "Delete", new { id = item.IngredientName })
+                                    @Html.ActionLink("Edit", "Edit", new { id = item.IngredientId }) |
+                                    @Html.ActionLink("Details", "Details", new { id = item.IngredientId }) |
+                                    @Html.ActionLink("Delete", "Delete", new { id = item.IngredientId })
                                 </div>
                             </div>
                         </div>
@@ -355,7 +354,7 @@ Alternatives = 0, Meats = 1, Seafood = 2, Vegetables = 3, Fruit = 4, Dairy = 5, 
     @*Legumes*@
     <div class="card">
         <div class="card-header">
-            <a class="card-link" data-toggle="collapse" href="#Legumes-Category">
+            <a class="category-link" data-toggle="collapse" href="#Legumes-Category">
                 Legumes
             </a>
         </div>
@@ -376,9 +375,9 @@ Alternatives = 0, Meats = 1, Seafood = 2, Vegetables = 3, Fruit = 4, Dairy = 5, 
                                     @Html.DisplayFor(modelItem => item.Description)
                                 </div>
                                 <div class="links">
-                                    @Html.ActionLink("Edit", "Edit", new { id = item.IngredientName }) |
-                                    @Html.ActionLink("Details", "Details", new { id = item.IngredientName }) |
-                                    @Html.ActionLink("Delete", "Delete", new { id = item.IngredientName })
+                                    @Html.ActionLink("Edit", "Edit", new { id = item.IngredientId }) |
+                                    @Html.ActionLink("Details", "Details", new { id = item.IngredientId }) |
+                                    @Html.ActionLink("Delete", "Delete", new { id = item.IngredientId })
                                 </div>
                             </div>
                         </div>
@@ -393,7 +392,7 @@ Alternatives = 0, Meats = 1, Seafood = 2, Vegetables = 3, Fruit = 4, Dairy = 5, 
     @*Meats*@
     <div class="card">
         <div class="card-header">
-            <a class="card-link" data-toggle="collapse" href="#Meats-Category">
+            <a class="category-link" data-toggle="collapse" href="#Meats-Category">
                 Meats
             </a>
         </div>
@@ -414,9 +413,9 @@ Alternatives = 0, Meats = 1, Seafood = 2, Vegetables = 3, Fruit = 4, Dairy = 5, 
                                     @Html.DisplayFor(modelItem => item.Description)
                                 </div>
                                 <div class="links">
-                                    @Html.ActionLink("Edit", "Edit", new { id = item.IngredientName }) |
-                                    @Html.ActionLink("Details", "Details", new { id = item.IngredientName }) |
-                                    @Html.ActionLink("Delete", "Delete", new { id = item.IngredientName })
+                                    @Html.ActionLink("Edit", "Edit", new { id = item.IngredientId }) |
+                                    @Html.ActionLink("Details", "Details", new { id = item.IngredientId }) |
+                                    @Html.ActionLink("Delete", "Delete", new { id = item.IngredientId })
                                 </div>
                             </div>
                         </div>
@@ -426,12 +425,11 @@ Alternatives = 0, Meats = 1, Seafood = 2, Vegetables = 3, Fruit = 4, Dairy = 5, 
         </div>
     </div>
 </div>
-
 <div id="accordion">
     @*Nuts*@
     <div class="card">
         <div class="card-header">
-            <a class="card-link" data-toggle="collapse" href="#Nuts-Category">
+            <a class="category-link" data-toggle="collapse" href="#Nuts-Category">
                 Nuts
             </a>
         </div>
@@ -452,9 +450,9 @@ Alternatives = 0, Meats = 1, Seafood = 2, Vegetables = 3, Fruit = 4, Dairy = 5, 
                                     @Html.DisplayFor(modelItem => item.Description)
                                 </div>
                                 <div class="links">
-                                    @Html.ActionLink("Edit", "Edit", new { id = item.IngredientName }) |
-                                    @Html.ActionLink("Details", "Details", new { id = item.IngredientName }) |
-                                    @Html.ActionLink("Delete", "Delete", new { id = item.IngredientName })
+                                    @Html.ActionLink("Edit", "Edit", new { id = item.IngredientId }) |
+                                    @Html.ActionLink("Details", "Details", new { id = item.IngredientId }) |
+                                    @Html.ActionLink("Delete", "Delete", new { id = item.IngredientId })
                                 </div>
                             </div>
                         </div>
@@ -469,7 +467,7 @@ Alternatives = 0, Meats = 1, Seafood = 2, Vegetables = 3, Fruit = 4, Dairy = 5, 
     @*Pasta*@
     <div class="card">
         <div class="card-header">
-            <a class="card-link" data-toggle="collapse" href="#Pasta-Category">
+            <a class="category-link" data-toggle="collapse" href="#Pasta-Category">
                 Pasta
             </a>
         </div>
@@ -490,9 +488,9 @@ Alternatives = 0, Meats = 1, Seafood = 2, Vegetables = 3, Fruit = 4, Dairy = 5, 
                                     @Html.DisplayFor(modelItem => item.Description)
                                 </div>
                                 <div class="links">
-                                    @Html.ActionLink("Edit", "Edit", new { id = item.IngredientName }) |
-                                    @Html.ActionLink("Details", "Details", new { id = item.IngredientName }) |
-                                    @Html.ActionLink("Delete", "Delete", new { id = item.IngredientName })
+                                    @Html.ActionLink("Edit", "Edit", new { id = item.IngredientId }) |
+                                    @Html.ActionLink("Details", "Details", new { id = item.IngredientId }) |
+                                    @Html.ActionLink("Delete", "Delete", new { id = item.IngredientId })
                                 </div>
                             </div>
                         </div>
@@ -508,7 +506,7 @@ Alternatives = 0, Meats = 1, Seafood = 2, Vegetables = 3, Fruit = 4, Dairy = 5, 
 
     <div class="card">
         <div class="card-header">
-            <a class="card-link" data-toggle="collapse" href="#Seafood-Category">
+            <a class="category-link" data-toggle="collapse" href="#Seafood-Category">
                 Seafood
             </a>
         </div>
@@ -529,9 +527,9 @@ Alternatives = 0, Meats = 1, Seafood = 2, Vegetables = 3, Fruit = 4, Dairy = 5, 
                                     @Html.DisplayFor(modelItem => item.Description)
                                 </div>
                                 <div class="links">
-                                    @Html.ActionLink("Edit", "Edit", new { id = item.IngredientName }) |
-                                    @Html.ActionLink("Details", "Details", new { id = item.IngredientName }) |
-                                    @Html.ActionLink("Delete", "Delete", new { id = item.IngredientName })
+                                    @Html.ActionLink("Edit", "Edit", new { id = item.IngredientId }) |
+                                    @Html.ActionLink("Details", "Details", new { id = item.IngredientId }) |
+                                    @Html.ActionLink("Delete", "Delete", new { id = item.IngredientId })
                                 </div>
                             </div>
                         </div>
@@ -546,7 +544,7 @@ Alternatives = 0, Meats = 1, Seafood = 2, Vegetables = 3, Fruit = 4, Dairy = 5, 
     @*Sweets*@
     <div class="card">
         <div class="card-header">
-            <a class="card-link" data-toggle="collapse" href="#Sweets-Category">
+            <a class="category-link" data-toggle="collapse" href="#Sweets-Category">
                 Sweets
             </a>
         </div>
@@ -567,9 +565,9 @@ Alternatives = 0, Meats = 1, Seafood = 2, Vegetables = 3, Fruit = 4, Dairy = 5, 
                                     @Html.DisplayFor(modelItem => item.Description)
                                 </div>
                                 <div class="links">
-                                    @Html.ActionLink("Edit", "Edit", new { id = item.IngredientName }) |
-                                    @Html.ActionLink("Details", "Details", new { id = item.IngredientName }) |
-                                    @Html.ActionLink("Delete", "Delete", new { id = item.IngredientName })
+                                    @Html.ActionLink("Edit", "Edit", new { id = item.IngredientId }) |
+                                    @Html.ActionLink("Details", "Details", new { id = item.IngredientId }) |
+                                    @Html.ActionLink("Delete", "Delete", new { id = item.IngredientId })
                                 </div>
                             </div>
                         </div>
@@ -584,7 +582,7 @@ Alternatives = 0, Meats = 1, Seafood = 2, Vegetables = 3, Fruit = 4, Dairy = 5, 
     @*Vegetables*@
     <div class="card">
         <div class="card-header">
-            <a class="card-link" data-toggle="collapse" href="#Vegetables-Category">
+            <a class="category-link" data-toggle="collapse" href="#Vegetables-Category">
                 Vegetables
             </a>
         </div>
@@ -605,9 +603,9 @@ Alternatives = 0, Meats = 1, Seafood = 2, Vegetables = 3, Fruit = 4, Dairy = 5, 
                                     @Html.DisplayFor(modelItem => item.Description)
                                 </div>
                                 <div class="links">
-                                    @Html.ActionLink("Edit", "Edit", new { id = item.IngredientName }) |
-                                    @Html.ActionLink("Details", "Details", new { id = item.IngredientName }) |
-                                    @Html.ActionLink("Delete", "Delete", new { id = item.IngredientName })
+                                    @Html.ActionLink("Edit", "Edit", new { id = item.IngredientId }) |
+                                    @Html.ActionLink("Details", "Details", new { id = item.IngredientId }) |
+                                    @Html.ActionLink("Delete", "Delete", new { id = item.IngredientId })
                                 </div>
                             </div>
                         </div>
@@ -618,44 +616,8 @@ Alternatives = 0, Meats = 1, Seafood = 2, Vegetables = 3, Fruit = 4, Dairy = 5, 
     </div>
 </div>
 
-
-
-
-
-
-
-@*<table class="table">
-        <tr>
-            <th>
-                @Html.DisplayNameFor(model => model.IngredientName)
-            </th>
-            <th>
-                @Html.DisplayNameFor(model => model.Description)
-            </th>
-            <th>
-                @Html.DisplayNameFor(model => model.Category)
-            </th>
-            <th></th>
-        </tr>
-
-        @foreach (var item in Model)
-        {
-            <tr>
-                <td>
-                    @Html.DisplayFor(modelItem => item.IngredientName)
-                </td>
-                <td>
-                    @Html.DisplayFor(modelItem => item.Description)
-                </td>
-                <td>
-                    @Html.DisplayFor(modelItem => item.Category)
-                </td>
-                <td>
-                    @Html.ActionLink("Edit", "Edit", new { id = item.IngredientId }) |
-                    @Html.ActionLink("Details", "Details", new { id = item.IngredientId }) |
-                    @Html.ActionLink("Delete", "Delete", new { id = item.IngredientId })
-                </td>
-            </tr>
-        }
-
-    </table>*@
+<style>
+    .card-link {
+        color: black !important;
+    }
+</style>

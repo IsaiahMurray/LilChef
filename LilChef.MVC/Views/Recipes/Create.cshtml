@@ -6,10 +6,10 @@
 
 <h2>Create</h2>
 
-@using (Html.BeginForm()) 
+@using (Html.BeginForm())
 {
     @Html.AntiForgeryToken()
-    
+
     <div class="form-horizontal">
         <h4>Recipe</h4>
         <hr />
@@ -133,6 +133,16 @@
                 <div class="checkbox">
                     @Html.EditorFor(model => model.IsKetoFriendly)
                     @Html.ValidationMessageFor(model => model.IsKetoFriendly, "", new { @class = "text-danger" })
+                </div>
+            </div>
+        </div>
+
+        <div class="form-group">
+            @Html.LabelFor(model => model.Difficulty, htmlAttributes: new { @class = "control-label col-md-2" })
+            <div class="col-md-10">
+                <div class="checkbox">
+                    @Html.EnumDropDownListFor(model => model.Difficulty)
+                    @Html.ValidationMessageFor(model => model.Difficulty, "", new { @class = "text-danger" })
                 </div>
             </div>
         </div>

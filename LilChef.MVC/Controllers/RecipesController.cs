@@ -46,6 +46,7 @@ namespace LilChef.MVC.Controllers
         }
 
         // GET: Recipes/Create
+        [Authorize]
         public ActionResult Create()
         {
             return View();
@@ -54,6 +55,7 @@ namespace LilChef.MVC.Controllers
         // POST: Recipes/Create
         [HttpPost]
         [ValidateAntiForgeryToken]
+        [Authorize]
         public ActionResult Create(Recipe recipe)
         {
             if (ModelState.IsValid)
@@ -67,33 +69,29 @@ namespace LilChef.MVC.Controllers
         }
 
         // GET: Recipes/Edit/5
+        [Authorize]
         public ActionResult Edit(int? id)
         {
             Recipe recipe = _db.Recipes.Find(id);
-            var user = this.GetEmailAdress();
-            if (user == recipe.Author || User.IsInRole("Admin,Lord"))
+
+            if (id == null)
             {
-                if (id == null)
-                {
-                    return new HttpStatusCodeResult(HttpStatusCode.BadRequest);
-                }
-                if (recipe == null)
-                {
-                    return HttpNotFound();
-                }
-                return View(recipe);
+                return new HttpStatusCodeResult(HttpStatusCode.BadRequest);
             }
-            return new HttpStatusCodeResult(HttpStatusCode.Unauthorized);
+            if (recipe == null)
+            {
+                return HttpNotFound();
+            }
+            return View(recipe);
+
         }
 
         // POST: Recipes/Edit/id
         [HttpPost]
         [ValidateAntiForgeryToken]
+        [Authorize]
         public ActionResult Edit(Recipe recipe)
         {
-            var user = this.GetEmailAdress();
-            if (user == recipe.Author || User.IsInRole("Admin,Lord"))
-            {
                 if (ModelState.IsValid)
                 {
                     _db.Entry(recipe).State = EntityState.Modified;
@@ -101,17 +99,13 @@ namespace LilChef.MVC.Controllers
                     return RedirectToAction("Index");
                 }
                 return View(recipe);
-            }
-            return new HttpStatusCodeResult(HttpStatusCode.Unauthorized);
         }
 
         // GET: Recipes/Delete/5
+        [Authorize]
         public ActionResult Delete(int? id)
         {
             Recipe recipe = _db.Recipes.Find(id);
-            var user = this.GetEmailAdress();
-            if (user == recipe.Author || User.IsInRole("Admin,Lord"))
-            {
                 if (id == null)
                 {
                     return new HttpStatusCodeResult(HttpStatusCode.BadRequest);
@@ -121,13 +115,12 @@ namespace LilChef.MVC.Controllers
                     return HttpNotFound();
                 }
                 return View(recipe);
-            }
-            return new HttpStatusCodeResult(HttpStatusCode.Unauthorized);
         }
 
         // POST: Recipes/Delete/5
         [HttpPost, ActionName("Delete")]
         [ValidateAntiForgeryToken]
+        [Authorize]
         public ActionResult DeleteConfirmed(int id)
         {
             Recipe recipe = _db.Recipes.Find(id);

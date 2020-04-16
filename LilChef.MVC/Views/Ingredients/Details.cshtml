@@ -1,114 +1,151 @@
-﻿@model LilChef.Models.IngredientModels.IngredientDetail
+﻿@model LilChef.Data.Ingredient
 
-@{
-    ViewBag.Title = "Details";
-}
+    @{
+        ViewBag.Title = "Details";
+    }
 
-<h2>Details</h2>
+    <h2>Details</h2>
 
-<div>
-    <h4>IngredientDetail</h4>
-    <hr />
-    <dl class="dl-horizontal">
-        <dt>
-            @Html.DisplayNameFor(model => model.IngredientName)
-        </dt>
+    <div>
+        <h4>IngredientDetail</h4>
+        <hr />
+        <div class="recipe-card">
+            <dl class="dl-horizontal">
+                <h4>
+                    <dt>
+                        @Html.DisplayNameFor(model => model.IngredientName)
+                    </dt>
 
-        <dd>
-            @Html.DisplayFor(model => model.IngredientName)
-        </dd>
+                    <dd>
+                        @Html.DisplayFor(model => model.IngredientName)
+                    </dd>
+                </h4>
+                <dt>
+                    @Html.DisplayNameFor(model => model.Description)
+                </dt>
 
-        <dt>
-            @Html.DisplayNameFor(model => model.Description)
-        </dt>
+                <dd>
+                    @Html.DisplayFor(model => model.Description)
+                </dd>
 
-        <dd>
-            @Html.DisplayFor(model => model.Description)
-        </dd>
+                <dt>
+                    @Html.DisplayNameFor(model => model.HasGluten)
+                </dt>
 
-        <dt>
-            @Html.DisplayNameFor(model => model.HasGluten)
-        </dt>
+                <dd>
+                    @Html.DisplayFor(model => model.HasGluten)
+                </dd>
 
-        <dd>
-            @Html.DisplayFor(model => model.HasGluten)
-        </dd>
+                <dt>
+                    @Html.DisplayNameFor(model => model.HasNuts)
+                </dt>
 
-        <dt>
-            @Html.DisplayNameFor(model => model.HasNuts)
-        </dt>
+                <dd>
+                    @Html.DisplayFor(model => model.HasNuts)
+                </dd>
 
-        <dd>
-            @Html.DisplayFor(model => model.HasNuts)
-        </dd>
+                <dt>
+                    @Html.DisplayNameFor(model => model.HasEggs)
+                </dt>
 
-        <dt>
-            @Html.DisplayNameFor(model => model.HasEggs)
-        </dt>
+                <dd>
+                    @Html.DisplayFor(model => model.HasEggs)
+                </dd>
 
-        <dd>
-            @Html.DisplayFor(model => model.HasEggs)
-        </dd>
+                <dt>
+                    @Html.DisplayNameFor(model => model.HasSoy)
+                </dt>
 
-        <dt>
-            @Html.DisplayNameFor(model => model.HasSoy)
-        </dt>
+                <dd>
+                    @Html.DisplayFor(model => model.HasSoy)
+                </dd>
 
-        <dd>
-            @Html.DisplayFor(model => model.HasSoy)
-        </dd>
+                <dt>
+                    @Html.DisplayNameFor(model => model.HasDairy)
+                </dt>
 
-        <dt>
-            @Html.DisplayNameFor(model => model.HasDairy)
-        </dt>
+                <dd>
+                    @Html.DisplayFor(model => model.HasDairy)
+                </dd>
 
-        <dd>
-            @Html.DisplayFor(model => model.HasDairy)
-        </dd>
+                <dt>
+                    @Html.DisplayNameFor(model => model.IsVegan)
+                </dt>
 
-        <dt>
-            @Html.DisplayNameFor(model => model.IsVegan)
-        </dt>
+                <dd>
+                    @Html.DisplayFor(model => model.IsVegan)
+                </dd>
 
-        <dd>
-            @Html.DisplayFor(model => model.IsVegan)
-        </dd>
+                <dt>
+                    @Html.DisplayNameFor(model => model.IsVegetarian)
+                </dt>
 
-        <dt>
-            @Html.DisplayNameFor(model => model.IsVegetarian)
-        </dt>
+                <dd>
+                    @Html.DisplayFor(model => model.IsVegetarian)
+                </dd>
 
-        <dd>
-            @Html.DisplayFor(model => model.IsVegetarian)
-        </dd>
+                <dt>
+                    @Html.DisplayNameFor(model => model.IsPescatarian)
+                </dt>
 
-        <dt>
-            @Html.DisplayNameFor(model => model.IsPescatarian)
-        </dt>
+                <dd>
+                    @Html.DisplayFor(model => model.IsPescatarian)
+                </dd>
 
-        <dd>
-            @Html.DisplayFor(model => model.IsPescatarian)
-        </dd>
+                <dt>
+                    @Html.DisplayNameFor(model => model.IsKetoFriendly)
+                </dt>
 
-        <dt>
-            @Html.DisplayNameFor(model => model.IsKetoFriendly)
-        </dt>
+                <dd>
+                    @Html.DisplayFor(model => model.IsKetoFriendly)
+                </dd>
 
-        <dd>
-            @Html.DisplayFor(model => model.IsKetoFriendly)
-        </dd>
+                <dt>
+                    @Html.DisplayNameFor(model => model.Category)
+                </dt>
 
-        <dt>
-            @Html.DisplayNameFor(model => model.Category)
-        </dt>
+                <dd>
+                    @Html.DisplayFor(model => model.Category)
+                </dd>
 
-        <dd>
-            @Html.DisplayFor(model => model.Category)
-        </dd>
+            </dl>
+        </div>
+        <p>
+            @Html.ActionLink("Edit", "Edit", new { id = Model.IngredientId}) |
+            @Html.ActionLink("Back to List", "Index")
+        </p>
+    </div>
 
-    </dl>
-</div>
-<p>
-    @Html.ActionLink("Edit", "Edit", new { /* id = Model.PrimaryKey */ }) |
-    @Html.ActionLink("Back to List", "Index")
-</p>
+    <style>
+        .recipe-card {
+            flex-wrap: wrap;
+            box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2);
+            width: 300px;
+            min-height: 375px;
+            max-height: 450px;
+            margin: auto;
+            text-align: center;
+            font-family: arial;
+        }
+
+        .price {
+            color: grey;
+            font-size: 22px;
+        }
+
+        .card button {
+            border: none;
+            outline: 0;
+            padding: 12px;
+            color: white;
+            background-color: #000;
+            text-align: center;
+            cursor: pointer;
+            width: 100%;
+            font-size: 18px;
+        }
+
+        .recipe-card button:hover {
+            opacity: 0.7;
+        }
+    </style>
