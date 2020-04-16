@@ -54,7 +54,7 @@ namespace LilChef.MVC.Controllers
         // POST: Recipes/Create
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public ActionResult Create([Bind(Include = "RecipeId,RecipeName,Description,IngredientItems,Procedure,HasGluten,HasNuts,HasEggs,HasSoy,HasDairy,IsVegan,IsVegetarian,IsPescatarian,IsKetoFriendly,Difficulty")] Recipe recipe)
+        public ActionResult Create(Recipe recipe)
         {
             if (ModelState.IsValid)
             {

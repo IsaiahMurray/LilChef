@@ -193,6 +193,7 @@
     <Compile Include="Startup.cs" />
   </ItemGroup>
   <ItemGroup>
+    <Content Include="Assets\bbq-kabobs.jpg" />
     <Content Include="Assets\bell-peppers.jpg" />
     <Content Include="Assets\berries.jpg" />
     <Content Include="Assets\bread-border.jpg" />
@@ -202,10 +203,15 @@
     <Content Include="Assets\fire.jpg" />
     <Content Include="Assets\fruits.jpg" />
     <Content Include="Assets\leaf-with-water-drops.jpg" />
+    <Content Include="Assets\misty.jpg" />
     <Content Include="Assets\oil-vinegar.jpg" />
+    <Content Include="Assets\peeling-cucumber.jpg" />
     <Content Include="Assets\red-chard.jpg" />
+    <Content Include="Assets\rolling-dough.jpg" />
+    <Content Include="Assets\rolling-pasta.jpg" />
     <Content Include="Assets\spice-spoons.jpg" />
     <Content Include="Assets\spices.jpg" />
+    <Content Include="Assets\spoon-of-salt.jpg" />
     <Content Include="Assets\tofu-salad.jpg" />
     <Content Include="Assets\tomato-onion-garlic.jpg" />
     <Content Include="Assets\vegetables.jpg" />
@@ -220,7 +226,8 @@
     <Content Include="Assets\grow-plants-in-water.jpg" />
     <Content Include="Scripts\bootstrap.js" />
     <Content Include="Scripts\bootstrap.min.js" />
-    <None Include="Properties\PublishProfiles\LilChef - Web Deploy.pubxml" />
+    <None Include="Properties\PublishProfiles\Lil-Chef - Web Deploy.pubxml" />
+    <None Include="Properties\PublishProfiles\LilChefMVC - Web Deploy.pubxml" />
     <None Include="Scripts\jquery-3.4.1.intellisense.js" />
     <Content Include="Scripts\jquery-3.4.1.js" />
     <Content Include="Scripts\jquery-3.4.1.min.js" />
@@ -268,10 +275,8 @@
     <Content Include="Views\Shared\_LoginPartial.cshtml" />
     <Content Include="Views\Recipes\Index.cshtml" />
     <Content Include="Views\Recipes\Details.cshtml" />
-    <Content Include="Views\Recipes\Create.cshtml" />
     <Content Include="Views\Recipes\Delete.cshtml" />
     <Content Include="Views\Recipes\Edit.cshtml" />
-    <Content Include="Views\CookingMethods\Create.cshtml" />
     <Content Include="Views\CookingMethods\Delete.cshtml" />
     <Content Include="Views\CookingMethods\Details.cshtml" />
     <Content Include="Views\CookingMethods\Edit.cshtml" />
@@ -286,6 +291,9 @@
     <Content Include="Views\Role\AssignRoleToUser.cshtml" />
     <Content Include="Views\Account\RegisterRole.cshtml" />
     <Content Include="Views\Account\RemoveRole.cshtml" />
+    <Content Include="Views\Role\Delete.cshtml" />
+    <Content Include="Views\CookingMethods\Create.cshtml" />
+    <Content Include="Views\Recipes\Create.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />

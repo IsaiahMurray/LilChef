@@ -8,37 +8,93 @@
     @Styles.Render("~/Content/css")
     @Scripts.Render("~/bundles/modernizr")
 
+
+    <!-- Bootstrap core CSS -->
+    <link href="vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet">
+
+    <!-- Custom fonts for this template -->
+    <link href="vendor/fontawesome-free/css/all.min.css" rel="stylesheet" type="text/css">
+    <link href="https://fonts.googleapis.com/css?family=Montserrat:400,700" rel="stylesheet" type="text/css">
+    <link href='https://fonts.googleapis.com/css?family=Kaushan+Script' rel='stylesheet' type='text/css'>
+    <link href='https://fonts.googleapis.com/css?family=Droid+Serif:400,700,400italic,700italic' rel='stylesheet' type='text/css'>
+    <link href='https://fonts.googleapis.com/css?family=Roboto+Slab:400,100,300,700' rel='stylesheet' type='text/css'>
+
+    <!-- Custom styles for this template -->
+    <link href="css/agency.min.css" rel="stylesheet">
+
+
 </head>
 <body>
-    <nav class="navbar navbar-expand-sm navbar-fixed-top" style="color: white !important">
+    <nav class="navbar navbar-expand-lg navbar-dark fixed-top" id="mainNav" style="background-color:black">
         <div class="container">
-            <div class="navbar-header">
-                <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
-                    <span class="icon-bar"></span>
-                    <span class="icon-bar"></span>
-                    <span class="icon-bar"></span>
-                </button>
-                @Html.ActionLink("Lil Chef", "Index", "Home", new { area = "" }, new { @class = "navbar-brand" })
-            </div>
-            <div class="navbar-collapse collapse">
-                <ul class="nav navbar-nav">
-                    <li class="nav-item">@Html.ActionLink("Home", "Index", "Home")</li>
-                    <li class="nav-item">@Html.ActionLink("About", "About", "Home")</li>
-                    <li class="nav-item">@Html.ActionLink("Recipes", "Index", "Recipes")</li>
-                    <li class="nav-item">@Html.ActionLink("Cooking Methods", "Index", "CookingMethods")</li>
-                    <li class="nav-item">@Html.ActionLink("Contact", "Contact", "Home")</li>
-                    @if (User.Identity.IsAuthenticated)
+            <a class="navbar-brand js-scroll-trigger" href="#page-top">LilChef</a>
+            <button class="navbar-toggler navbar-toggler-right" type="button" data-toggle="collapse" data-target="#navbarResponsive" aria-controls="navbarResponsive" aria-expanded="false" aria-label="Toggle navigation">
+                Menu
+                <i class="fas fa-bars"></i>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarResponsive">
+                <ul class="navbar-nav text-uppercase ml-auto">
+                    <li class="nav-item ">
+                        <a class="nav-link js-scroll-trigger" href="~/Home/Index">Home</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link js-scroll-trigger" href="~/Recipes/Index">Recipes</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link js-scroll-trigger" href="~/CookingMethods/Index">Cooking Methods</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link js-scroll-trigger" href="~/Home/About">About</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link js-scroll-trigger" href="~/Home/Contact">Contact</a>
+                    </li>
+                    @if (User.IsInRole("Lord"))
                     {
-                        if (User.IsInRole("Lord"))
-                        {
-                        <li class="nav-item">@Html.ActionLink("Roles", "Index", "Role")</li>
-                        }
+                        <li class="nav-item">
+                            <a class="nav-link js-scroll-trigger" href="~/Role/Index">Roles</a>
+                        </li>
                     }
-                    </ul>
-                @Html.Partial("_LoginPartial")
+                    <li class="nav-item">
+                        @Html.Partial("_LoginPartial")
+                    </li>
+                </ul>
+
             </div>
         </div>
     </nav>
+
+
+
+    @*<nav class="navbar navbar-expand-sm navbar-fixed-top" style="color: white !important">
+            <div class="container">
+                <div class="navbar-header">
+                    <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
+                        <span class="icon-bar"></span>
+                        <span class="icon-bar"></span>
+                        <span class="icon-bar"></span>
+                    </button>
+                    @Html.ActionLink("Lil Chef", "Index", "Home", new { area = "" }, new { @class = "navbar-brand" })
+                </div>
+                <div class="navbar-collapse collapse">
+                    <ul class="nav navbar-nav">
+                        <li class="nav-item">@Html.ActionLink("Home", "Index", "Home")</li>
+                        <li class="nav-item">@Html.ActionLink("About", "About", "Home")</li>
+                        <li class="nav-item">@Html.ActionLink("Recipes", "Index", "Recipes")</li>
+                        <li class="nav-item">@Html.ActionLink("Cooking Methods", "Index", "CookingMethods")</li>
+                        <li class="nav-item">@Html.ActionLink("Contact", "Contact", "Home")</li>
+                        @if (User.Identity.IsAuthenticated)
+                        {
+                            if (User.IsInRole("Lord"))
+                            {
+                                <li class="nav-item">@Html.ActionLink("Roles", "Index", "Role")</li>
+                            }
+                        }
+                    </ul>
+                    @Html.Partial("_LoginPartial")
+                </div>
+            </div>
+        </nav>*@
     <div class="container body-content">
         @RenderBody()
         <hr />
@@ -47,12 +103,139 @@
         </footer>
     </div>
     <style>
+        body {
+            overflow-x: hidden;
+            font-family: 'Montserrat', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, 'Helvetica Neue', Arial, sans-serif, 'Apple Color Emoji', 'Segoe UI Emoji', 'Segoe UI Symbol', 'Noto Color Emoji';
+        }
+
+        p {
+            line-height: 1.75;
+        }
+
+        a {
+            color: #fed136;
+        }
+
+            a:hover {
+                color: #fec503;
+            }
+
+
+
+        .btn {
+            font-family: 'Montserrat', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, 'Helvetica Neue', Arial, sans-serif, 'Apple Color Emoji', 'Segoe UI Emoji', 'Segoe UI Symbol', 'Noto Color Emoji';
+            font-weight: 700;
+        }
+
+        .btn-xl {
+            font-size: 18px;
+            padding: 20px 40px;
+        }
+
+        .btn-primary {
+            background-color: #fed136;
+            border-color: #fed136;
+        }
+
+            .btn-primary:active, .btn-primary:focus, .btn-primary:hover {
+                background-color: #fec810 !important;
+                border-color: #fec810 !important;
+                color: white;
+            }
+
+            .btn-primary:active, .btn-primary:focus {
+                box-shadow: 0 0 0 0.2rem rgba(254, 209, 55, 0.5) !important;
+            }
+
+            .btn-default {
+            background-color: #fed136;
+            border-color: #fed136;
+        }
+
+            .btn-default:active, .btn-default:focus, .btn-default:hover {
+                background-color: #fec810 !important;
+                border-color: #fec810 !important;
+                color: white;
+            }
+
+            .btn-default:active, .btn-default:focus {
+                box-shadow: 0 0 0 0.2rem rgba(254, 209, 55, 0.5) !important;
+            }
+
+        .text-primary {
+            color: #fed136 !important;
+        }
+
         .navbar {
             background-image: url(/Assets/red-chard.jpg);
             height: 60px;
+            object-fit: none;
         }
-        .nav-item{
-            color: white !important;
+
+        #mainNav {
+            background-color: black;
+        }
+
+            #mainNav .navbar-toggler {
+                font-size: 12px;
+                right: 0;
+                padding: 13px;
+                text-transform: uppercase;
+                color: white;
+                border: 0;
+                background-color: #fed136;
+                font-family: 'Montserrat', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, 'Helvetica Neue', Arial, sans-serif, 'Apple Color Emoji', 'Segoe UI Emoji', 'Segoe UI Symbol', 'Noto Color Emoji';
+            }
+
+            #mainNav .navbar-brand {
+                color: #fed136;
+                font-family: 'Kaushan Script', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, 'Helvetica Neue', Arial, sans-serif, 'Apple Color Emoji', 'Segoe UI Emoji', 'Segoe UI Symbol', 'Noto Color Emoji';
+            }
+
+                #mainNav .navbar-brand.active, #mainNav .navbar-brand:active, #mainNav .navbar-brand:focus, #mainNav .navbar-brand:hover {
+                    color: #fec503;
+                }
+
+            #mainNav .navbar-nav .nav-item .nav-link {
+                font-size: 90%;
+                font-weight: 600;
+                padding: 0.75em 0;
+                letter-spacing: 1px;
+                color: white;
+                font-family: 'Kaushan Script', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, 'Helvetica Neue', Arial, sans-serif, 'Apple Color Emoji', 'Segoe UI Emoji', 'Segoe UI Symbol', 'Noto Color Emoji';
+            }
+
+                #mainNav .navbar-nav .nav-item .nav-link.active, #mainNav .navbar-nav .nav-item .nav-link:hover {
+                    color: #fed136;
+                }
+
+        @@media (min-width: 992px) {
+            #mainNav {
+                padding-top: 25px;
+                padding-bottom: 25px;
+                transition: padding-top 0.3s, padding-bottom 0.3s;
+                border: none;
+            }
+
+                #mainNav .navbar-brand {
+                    font-size: 1.75em;
+                    transition: all 0.3s;
+                }
+
+                #mainNav .navbar-nav .nav-item .nav-link {
+                    padding: 1.1em 1em !important;
+                }
+
+                #mainNav.navbar-shrink {
+                    padding-top: 0;
+                    padding-bottom: 0;
+                    background-color: #212529;
+                }
+
+                    #mainNav.navbar-shrink .navbar-brand {
+                        font-size: 1.25em;
+                        padding: 12px 0;
+                    }
         }
     </style>
     @Scripts.Render("~/bundles/jquery")
@@ -62,5 +245,21 @@
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.16.0/umd/popper.min.js"></script>
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.min.js"></script>
+
+
+    <!-- Bootstrap core JavaScript -->
+    <script src="vendor/jquery/jquery.min.js"></script>
+    <script src="vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
+
+    <!-- Plugin JavaScript -->
+    <script src="vendor/jquery-easing/jquery.easing.min.js"></script>
+
+    <!-- Contact form JavaScript -->
+    <script src="js/jqBootstrapValidation.js"></script>
+    <script src="js/contact_me.js"></script>
+
+    <!-- Custom scripts for this template -->
+    <script src="js/agency.min.js"></script>
+
 </body>
 </html>

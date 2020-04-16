@@ -9,87 +9,184 @@
 <p>
     @Html.ActionLink("Create New", "Create")
 </p>
-<table class="table">
-    <tr>
-        <th>
-            @Html.DisplayNameFor(model => model.RecipeName)
-        </th>
-        <th>
-            @Html.DisplayNameFor(model => model.HasGluten)
-        </th>
-        <th>
-            @Html.DisplayNameFor(model => model.HasNuts)
-        </th>
-        <th>
-            @Html.DisplayNameFor(model => model.HasEggs)
-        </th>
-        <th>
-            @Html.DisplayNameFor(model => model.HasSoy)
-        </th>
-        <th>
-            @Html.DisplayNameFor(model => model.HasDairy)
-        </th>
-        <th>
-            @Html.DisplayNameFor(model => model.IsVegan)
-        </th>
-        <th>
-            @Html.DisplayNameFor(model => model.IsVegetarian)
-        </th>
-        <th>
-            @Html.DisplayNameFor(model => model.IsPescatarian)
-        </th>
-        <th>
-            @Html.DisplayNameFor(model => model.IsKetoFriendly)
-        </th>
-        <th>
-            @Html.DisplayNameFor(model => model.Difficulty)
-        </th>
-    </tr>
+@foreach (var item in Model)
+{
+    <div class="recipe-card">
+        <h1>
+            @Html.DisplayFor(modelItem => item.RecipeName)
+        </h1>
 
-    @foreach (var item in Model)
-    {
+        <p class="description">@Html.DisplayFor(model => item.Description)</p>
+        <dl class="dl-horizontal">
+            <dt>
+                @Html.DisplayNameFor(model => model.HasGluten)
+            </dt>
+
+            <dd>
+                @Html.DisplayFor(model => item.HasGluten)
+            </dd>
+
+            <dt>
+                @Html.DisplayNameFor(model => model.HasNuts)
+            </dt>
+
+            <dd>
+                @Html.DisplayFor(model => item.HasNuts)
+            </dd>
+
+            <dt>
+                @Html.DisplayNameFor(model => model.HasEggs)
+            </dt>
+
+            <dd>
+                @Html.DisplayFor(model => item.HasEggs)
+            </dd>
+
+            <dt>
+                @Html.DisplayNameFor(model => model.HasSoy)
+            </dt>
+
+            <dd>
+                @Html.DisplayFor(model => item.HasSoy)
+            </dd>
+
+            <dt>
+                @Html.DisplayNameFor(model => model.HasDairy)
+            </dt>
+
+            <dd>
+                @Html.DisplayFor(model => item.HasDairy)
+            </dd>
+
+            <dt>
+                @Html.DisplayNameFor(model => model.IsVegan)
+            </dt>
+
+            <dd>
+                @Html.DisplayFor(model => item.IsVegan)
+            </dd>
+
+            <dt>
+                @Html.DisplayNameFor(model => model.IsVegetarian)
+            </dt>
+
+            <dd>
+                @Html.DisplayFor(model => item.IsVegetarian)
+            </dd>
+        </dl>
+        <a>@Html.ActionLink("Details", "Details", new { id = item.RecipeId }) &raquo;</a>
+    </div>
+}
+
+@*<table class="table">
         <tr>
-            <td>
-                @Html.DisplayFor(modelItem => item.RecipeName)
-            </td>
-            <td>
-                @Html.DisplayFor(modelItem => item.HasGluten)
-            </td>
-            <td>
-                @Html.DisplayFor(modelItem => item.HasNuts)
-            </td>
-            <td>
-                @Html.DisplayFor(modelItem => item.HasEggs)
-            </td>
-            <td>
-                @Html.DisplayFor(modelItem => item.HasSoy)
-            </td>
-            <td>
-                @Html.DisplayFor(modelItem => item.HasDairy)
-            </td>
-            <td>
-                @Html.DisplayFor(modelItem => item.IsVegan)
-            </td>
-            <td>
-                @Html.DisplayFor(modelItem => item.IsVegetarian)
-            </td>
-            <td>
-                @Html.DisplayFor(modelItem => item.IsPescatarian)
-            </td>
-            <td>
-                @Html.DisplayFor(modelItem => item.IsKetoFriendly)
-            </td>
-            <td>
-                @Html.DisplayFor(modelItem => item.Difficulty)
-            </td>
-
-            <td>
-                @Html.ActionLink("Edit", "Edit", new { id = item.RecipeId })
-                @Html.ActionLink("Details", "Details", new { id = item.RecipeId })
-                @Html.ActionLink("Delete", "Delete", new { id = item.RecipeId })
-            </td>
+            <th>
+                @Html.DisplayNameFor(model => model.RecipeName)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Description)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.HasGluten)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.HasNuts)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.HasEggs)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.HasSoy)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.HasDairy)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.IsVegan)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.IsVegetarian)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Difficulty)
+            </th>
         </tr>
+
+        @foreach (var item in Model)
+        {
+            <tr>
+                <td>
+                    @Html.DisplayFor(modelItem => item.RecipeName)
+                </td>
+                <td>
+                    @Html.DisplayFor(model => item.Description)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.HasGluten)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.HasNuts)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.HasEggs)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.HasSoy)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.HasDairy)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.IsVegan)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.IsVegetarian)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.Difficulty)
+                </td>
+
+                <td>
+                    @Html.ActionLink("Edit", "Edit", new { id = item.RecipeId })
+                    @Html.ActionLink("Details", "Details", new { id = item.RecipeId })
+                    @Html.ActionLink("Delete", "Delete", new { id = item.RecipeId })
+                </td>
+            </tr>
+        }
+
+    </table>*@
+
+<style>
+    .recipe-card {
+        flex-wrap: wrap;
+        box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2);
+        width: 300px;
+        min-height: 375px;
+        max-height: 450px;
+        margin: auto;
+        text-align: center;
+        font-family: arial;
+
     }
 
-</table>
+    .price {
+        color: grey;
+        font-size: 22px;
+    }
 
+    .card button {
+        border: none;
+        outline: 0;
+        padding: 12px;
+        color: white;
+        background-color: #000;
+        text-align: center;
+        cursor: pointer;
+        width: 100%;
+        font-size: 18px;
+    }
+
+    .recipe-card button:hover {
+        opacity: 0.7;
+    }
+</style>

@@ -1,4 +1,4 @@
-﻿@model LilChef.Models.RecipeModels.RecipeDetail
+﻿@model LilChef.Data.Recipe
 
 @{
     ViewBag.Title = "Details";
@@ -126,5 +126,6 @@
 </div>
 <p>
     @Html.ActionLink("Edit", "Edit", new { /* id = Model.PrimaryKey */ }) |
+    @Html.ActionLink("Delete", "Delete", new { }) |
     @Html.ActionLink("Back to List", "Index")
 </p>

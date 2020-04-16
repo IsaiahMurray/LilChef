@@ -144,7 +144,7 @@ namespace LilChef.MVC.Controllers
             return View();
         }
 
-        [Authorize(Roles = "Lord")]
+        //[Authorize(Roles = "Lord")]
         [HttpGet]
         public ActionResult RegisterRole()
         {
@@ -156,7 +156,7 @@ namespace LilChef.MVC.Controllers
 
         //POST: Account/RegisterRole
         [HttpPost]
-        [Authorize(Roles = "Lord")]
+        //[Authorize(Roles = "Lord")]
         [ValidateAntiForgeryToken]
         public async Task<ActionResult> RegisterRole(RegisterViewModel model, ApplicationUser user)
         {

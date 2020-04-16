@@ -2,28 +2,158 @@
     ViewBag.Title = "Home Page";
 }
 
-<div class="jumbotron">
-    <h1>Lil Chef</h1>
-    <p class="lead">Lil Chef is a website for anyone with the desire to better their cooking and cook something new!</p>
-    <p><a href="/Home/About/" class="btn btn-primary btn-lg">Learn more &raquo;</a></p>
-</div>
+<header class="masthead">
+    <div class="container">
+        <div class="intro-text">
+            <div class="intro-lead-in">Welcome To Lil'Chef!</div>
+            <div class="intro-heading text-uppercase"></div>
+        @*<a class="btn btn-primary btn-xl text-uppercase js-scroll-trigger" href="#services">Tell Me More</a>*@
+        </div>
+    </div>
+</header>
 
-<div class="row">
-    <div class="col-md-4">
-        <h2>Ingredients Catalog</h2>
-        <p>
-            Take a look at variety of ingredients too see if they will fit your recipe!
-        </p>
-        <p><a class="btn btn-default" href="/Ingredients/Index/">Ingredients &raquo;</a></p>
+<!-- Services -->
+<section class="page-section" id="services">
+    <div class="container">
+        <div class="row">
+            <div class="col-lg-12 text-center">
+                <h1>Lil Chef</h1>
+                <p class="lead">Lil'Chef is a website for anyone with the desire to better their cooking and cook something new!</p>
+                <h3 class="section-subheading text-muted"><a href="/Home/About/" class="btn btn-primary btn-lg">Learn more &raquo;</a></h3>
+            </div>
+        </div>
+        <div class="row text-center">
+            <div class="col-md-4">
+                <span class="fa-stack fa-4x">
+                        <img class="timeline-image" src="~/Assets/berries.jpg" alt="">
+                </span>
+                <h4>Ingredients Catalog</h4>
+                <p>Take a look at variety of ingredients too see if they will fit your recipe!</p>
+                <p><a class="btn btn-default" href="/Ingredients/Index/">Ingredients &raquo;</a></p>
+            </div>
+            <div class="col-md-4">
+                <span class="fa-stack fa-4x">
+                        <img class="timeline-image" src="~/Assets/peeling-cucumber.jpg" alt="" />
+                </span>
+                <h4>Our Recipes</h4>
+                <p>Find new recipes and take a taste from another cook's perspective!</p>
+                <p><a class="btn btn-default" href="/Recipes/Index/">Recipes &raquo;</a></p>
+            </div>
+            <div class="col-md-4">
+                <span class="fa-stack fa-4x">
+                        <img class="timeline-image" src="~/Assets/rolling-pasta.jpg" alt="" />
+                </span>
+                <h4>Learn The Basics</h4>
+                <p>Browse through our cooking methods and techniques to up your skills in kitchen!</p>
+                <p><a class="btn btn-default" href="/CookingMethods/Index/">Techniques &raquo;</a></p>
+            </div>
+        </div>
     </div>
-    <div class="col-md-4">
-        <h2>Our Recipes</h2>
-        <p>Find new recipes and take a taste from another cook's perspective!</p>
-        <p><a class="btn btn-default" href="/Recipes/Index/">Recipes &raquo;</a></p>
+</section>
+
+
+<style>
+    
+
+  @@media (min-width: 768px) {
+  section {
+    padding: 150px 0;
+  }
+}
+
+  header.masthead {
+  text-align: center;
+  color: white;
+  background-image: url(/Assets/spoon-of-salt.jpg);
+  background-repeat: no-repeat;
+  background-attachment: scroll;
+  background-position: center center;
+  background-size: cover;
+}
+
+header.masthead .intro-text {
+  padding-top: 150px;
+  padding-bottom: 100px;
+}
+
+header.masthead .intro-text .intro-lead-in {
+  font-size: 22px;
+  font-style: italic;
+  line-height: 22px;
+  margin-bottom: 25px;
+  font-family: 'Droid Serif', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, 'Helvetica Neue', Arial, sans-serif, 'Apple Color Emoji', 'Segoe UI Emoji', 'Segoe UI Symbol', 'Noto Color Emoji';
+}
+
+header.masthead .intro-text .intro-heading {
+  font-size: 50px;
+  font-weight: 700;
+  line-height: 50px;
+  margin-bottom: 25px;
+  font-family: 'Montserrat', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, 'Helvetica Neue', Arial, sans-serif, 'Apple Color Emoji', 'Segoe UI Emoji', 'Segoe UI Symbol', 'Noto Color Emoji';
+}
+
+@@media (min-width: 768px) {
+  header.masthead .intro-text {
+    padding-top: 300px;
+    padding-bottom: 200px;
+  }
+  header.masthead .intro-text .intro-lead-in {
+    font-size: 40px;
+    font-style: italic;
+    line-height: 40px;
+    margin-bottom: 25px;
+    font-family: 'Droid Serif', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, 'Helvetica Neue', Arial, sans-serif, 'Apple Color Emoji', 'Segoe UI Emoji', 'Segoe UI Symbol', 'Noto Color Emoji';
+  }
+  header.masthead .intro-text .intro-heading {
+    font-size: 75px;
+    font-weight: 700;
+    line-height: 75px;
+    margin-bottom: 50px;
+    font-family: 'Montserrat', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, 'Helvetica Neue', Arial, sans-serif, 'Apple Color Emoji', 'Segoe UI Emoji', 'Segoe UI Symbol', 'Noto Color Emoji';
+  }
+}
+
+    .timeline-image {
+  width: 150px;
+  height: 150px;
+  text-align: center;
+  border: 7px solid #e9ecef;
+  border-radius: 100%;
+  object-fit: none;
+</style>
+
+
+
+
+
+
+
+
+
+
+
+@*<div class="jumbotron">
+        <h1>Lil Chef</h1>
+        <p class="lead">Lil Chef is a website for anyone with the desire to better their cooking and cook something new!</p>
+        <p><a href="/Home/About/" class="btn btn-primary btn-lg">Learn more &raquo;</a></p>
     </div>
-    <div class="col-md-4">
-        <h2>Learn The Basics</h2>
-        <p>Browse through our cooking methods and techniques to up your skills in kitchen!</p>
-        <p><a class="btn btn-default" href="/CookingMethods/Index/">Techniques &raquo;</a></p>
-    </div>
-</div>
+
+    <div class="row">
+        <div class="col-md-4">
+            <h2>Ingredients Catalog</h2>
+            <p>
+                Take a look at variety of ingredients too see if they will fit your recipe!
+            </p>
+            <p><a class="btn btn-default" href="/Ingredients/Index/">Ingredients &raquo;</a></p>
+        </div>
+        <div class="col-md-4">
+            <h2>Our Recipes</h2>
+            <p>Find new recipes and take a taste from another cook's perspective!</p>
+            <p><a class="btn btn-default" href="/Recipes/Index/">Recipes &raquo;</a></p>
+        </div>
+        <div class="col-md-4">
+            <h2>Learn The Basics</h2>
+            <p>Browse through our cooking methods and techniques to up your skills in kitchen!</p>
+            <p><a class="btn btn-default" href="/CookingMethods/Index/">Techniques &raquo;</a></p>
+        </div>
+    </div>*@

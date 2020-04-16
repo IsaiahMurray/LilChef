@@ -47,7 +47,7 @@ namespace LilChef.MVC.Controllers
         [HttpPost]
         [ValidateAntiForgeryToken]
         [Authorize(Roles = "Admin, Lord")]
-        public ActionResult Create([Bind(Include = "IngredientId,IngredientName,Description,HasGluten,HasNuts,HasEggs,HasSoy,HasDairy,IsVegan,IsVegetarian,IsPescatarian,IsKetoFriendly,Category")] Ingredient ingredient)
+        public ActionResult Create(Ingredient ingredient)
         {
             if (ModelState.IsValid)
             {
